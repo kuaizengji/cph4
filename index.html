@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <script>
+      if (window.location.protocol === "file:") {
+        window.location.replace(
+          new URL("./dist/index.html?motion=1", window.location.href).href,
+        );
+      }
+    </script>
+    <meta
+      name="description"
+      content="CPH4.AI builds self-evolving organizations and endlessly advancing individuals."
+    />
+    <title>CPH4.AI — Augment Humanity</title>
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Cpath d='M48 15 32 6 10 19v26l22 13 22-13V31H32v8h13v2L32 49 18 41V23l14-8 11 6z' fill='white'/%3E%3C/svg%3E" />
+    <link rel="preload" href="./assets/home-line-field.png" as="image" />
+    <link rel="preload" href="./assets/cph4-logo-lockup.png" as="image" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#home">Skip to content</a>
+
+    <div class="experience" data-experience>
+      <canvas class="line-world" data-line-world aria-hidden="true"></canvas>
+      <div class="grain" aria-hidden="true"></div>
+
+      <header class="site-header" data-header>
+        <a class="brand" href="#home" data-go="0" aria-label="CPH4.AI home">
+          <img src="./assets/cph4-logo-lockup.png" alt="CPH4.AI — Augment Humanity" />
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a href="#organization" data-go="1">Organization</a>
+          <a href="#individual" data-go="2">Individual</a>
+          <a href="#domains" data-go="3">Domains</a>
+          <a href="#about" data-go="4">About</a>
+        </nav>
+
+        <a class="contact-link" href="mailto:hello@cph4.ai">
+          <span aria-hidden="true"></span>
+          Contact
+        </a>
+      </header>
+
+      <main class="panel-stack" aria-live="polite">
+        <section class="panel panel-home is-active" id="home" data-panel="0" aria-labelledby="home-title">
+          <div class="panel-copy hero-copy">
+            <h1 id="home-title">Intelligence,<br />without end.</h1>
+            <p>Self-evolving organizations.<br />Endlessly advancing individuals.</p>
+            <a class="outline-cta" href="#organization" data-go="1">Enter CPH4</a>
+          </div>
+        </section>
+
+        <section class="panel panel-organization" id="organization" data-panel="1" aria-labelledby="organization-title">
+          <div class="panel-copy organization-copy">
+            <p class="eyebrow">01 / Organization</p>
+            <h2 id="organization-title">An organization<br />that evolves itself.</h2>
+            <p class="section-lede">Agentic systems that sense, decide, execute, and learn across the enterprise.</p>
+            <p class="section-note">A living intelligence layer for operations, knowledge, and growth.</p>
+          </div>
+        </section>
+
+        <section class="panel panel-individual" id="individual" data-panel="2" aria-labelledby="individual-title">
+          <div class="panel-copy individual-copy">
+            <p class="eyebrow">02 / Individual</p>
+            <h2 id="individual-title">A self that never<br />stops becoming.</h2>
+            <p class="section-lede">Intelligence that amplifies capability, identity, and human potential.</p>
+            <p class="section-note">An evolving digital counterpart built around the person.</p>
+          </div>
+        </section>
+
+        <section class="panel panel-domains" id="domains" data-panel="3" aria-labelledby="domains-title">
+          <div class="panel-copy domains-copy">
+            <p class="eyebrow">03 / Expansion</p>
+            <h2 id="domains-title">Built to expand.</h2>
+            <p class="lede">One intelligence architecture. Any frontier.</p>
+            <ol class="domain-list">
+              <li><span>01</span>Artificial Intelligence</li>
+              <li><span>02</span>Digital Human</li>
+              <li><span>03</span>Biopharma</li>
+              <li><span>04</span>Education</li>
+              <li><span>05</span>Enterprise Systems</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="panel panel-about" id="about" data-panel="4" aria-labelledby="about-title">
+          <div class="panel-copy about-copy">
+            <p class="eyebrow">04 / Continuum</p>
+            <h2 id="about-title">We are not building<br />the future.</h2>
+            <p>We are building what keeps becoming it.</p>
+            <a class="outline-cta outline-cta-wide" href="mailto:hello@cph4.ai">Start a conversation</a>
+          </div>
+        </section>
+      </main>
+
+      <p class="fallback-message">This desktop experience requires WebGL.</p>
+    </div>
+
+    <div class="scroll-track" aria-hidden="true">
+      <div></div><div></div><div></div><div></div><div></div>
+    </div>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
