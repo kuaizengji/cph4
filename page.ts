@@ -1,4 +1,3 @@
-import "@fontsource-variable/orbitron";
 import {
   escapeHtml,
   jobs,

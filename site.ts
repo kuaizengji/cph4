@@ -306,6 +306,6 @@ export const mountFooter = () => {
         </ul>
       </div>
     </div>
-    <p class="footer-meta">CPH4.AI</p>
+    <p class="footer-meta">&copy; 2026 CPH4.AI</p>
   `;
 };
