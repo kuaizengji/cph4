@@ -1,3 +1,4 @@
+@import "./fonts/d-din/d-din.css";
 @import "./design-system/colors_and_type.css";
 
 *,
@@ -32,7 +33,7 @@ body {
   overflow-x: hidden;
   background: #000;
   color: var(--ui-white);
-  font-family: var(--font-body, "Orbitron Variable", "Orbitron", sans-serif);
+  font-family: var(--font-body, "D-DIN", sans-serif);
   -webkit-font-smoothing: antialiased;
   overscroll-behavior-y: none;
 }
@@ -105,6 +106,24 @@ a:focus-visible {
   padding: 0 var(--header-pad);
 }
 
+.site-header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: calc(var(--header-height) + 36px);
+  background: linear-gradient(
+    to bottom,
+    #000 0%,
+    #000 58%,
+    rgba(0, 0, 0, 0.72) 78%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
 .brand {
   display: block;
   width: clamp(262px, 19.1vw, 294px);
@@ -127,7 +146,7 @@ a:focus-visible {
 .contact-link {
   position: relative;
   color: rgba(247, 247, 245, 0.88);
-  font: 500 14px/1 var(--font-body, "Orbitron Variable", "Orbitron", sans-serif);
+  font: 500 16px/1 var(--font-body, "D-DIN", sans-serif);
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
@@ -191,31 +210,32 @@ a:focus-visible {
 .hero-copy h1,
 .section h2 {
   margin: 0;
-  font-family: var(--font-display, "Orbitron Variable", "Orbitron", sans-serif);
-  font-weight: 650;
-  letter-spacing: -0.035em;
+  font-family: var(--font-display, "D-DIN-Bold", "D-DIN", sans-serif);
+  font-weight: 400;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
 .hero-copy h1 {
-  width: 11ch;
+  width: 14ch;
   font-family: var(--font-display);
   font-size: clamp(66px, 4.95vw, 80px);
-  font-stretch: expanded;
-  font-weight: 600;
-  letter-spacing: -0.02em;
-  line-height: 1.12;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  line-height: 1.05;
   white-space: nowrap;
-  transform: translateX(-3px) scaleX(1.04);
-  transform-origin: left center;
 }
 
 .hero-copy > p {
   margin: 32px 0 0;
   color: rgba(247, 247, 245, 0.86);
-  font-size: clamp(18px, 1.35vw, 22px);
+  font-size: clamp(20px, 1.5vw, 24px);
   font-weight: 400;
-  line-height: 1.43;
+  line-height: 1.5;
+}
+
+.hero-copy .outline-cta {
+  margin-top: 48px;
 }
 
 .outline-cta {
@@ -227,7 +247,7 @@ a:focus-visible {
   padding: 0 28px;
   border: 1px solid rgba(247, 247, 245, 0.82);
   background: rgba(0, 0, 0, 0.08);
-  font: 500 16px/1 var(--font-body, "Orbitron Variable", "Orbitron", sans-serif);
+  font: 500 16px/1 var(--font-body, "D-DIN", sans-serif);
   letter-spacing: 0.24em;
   text-transform: uppercase;
   transition: color 260ms ease, background 260ms ease;
@@ -245,7 +265,7 @@ a:focus-visible {
 .eyebrow {
   margin: 0 0 24px;
   color: var(--ui-muted);
-  font: 500 12px/1 var(--font-mono, monospace);
+  font: 500 14px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -301,7 +321,7 @@ a:focus-visible {
 .capabilities-detail .capability-detail-group {
   margin: 0 0 18px;
   color: var(--ui-muted);
-  font: 500 12px/1 var(--font-mono, monospace);
+  font: 500 14px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -309,10 +329,10 @@ a:focus-visible {
 .products-detail .product-detail-name,
 .capabilities-detail .capability-detail-name {
   margin: 0;
-  font-family: var(--font-display, "Orbitron Variable", "Orbitron", sans-serif);
+  font-family: var(--font-display, "D-DIN-Bold", "D-DIN", sans-serif);
   font-size: clamp(28px, 2.6vw, 40px);
-  font-weight: 650;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   line-height: 1.05;
   text-transform: uppercase;
 }
@@ -320,7 +340,7 @@ a:focus-visible {
 .products-detail .page-lede,
 .capabilities-detail .page-lede {
   margin-top: 16px;
-  font-size: clamp(14px, 1.05vw, 17px);
+  font-size: clamp(16px, 1.15vw, 19px);
 }
 
 .products-detail .page-body,
@@ -330,7 +350,7 @@ a:focus-visible {
 
 .products-detail .page-body p,
 .capabilities-detail .page-body p {
-  font-size: clamp(13px, 0.98vw, 15px);
+  font-size: clamp(15px, 1.08vw, 17px);
 }
 
 .products-detail .outline-cta {
@@ -385,26 +405,62 @@ a:focus-visible {
 }
 
 .product-list li {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 6px 20px;
-  padding: 13px 0 14px;
+  padding: 13px 0 14px 14px;
   border-bottom: 1px solid rgba(247, 247, 245, 0.22);
-  cursor: default;
-  transition: color 160ms ease;
+  cursor: pointer;
+  transition: color 220ms var(--ease-out);
+}
+
+.product-list li::before,
+.capability-list li::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 1px;
+  height: 12px;
+  background: #fff;
+  content: "";
+  transform: translateY(-50%) scaleY(0);
+  transform-origin: center;
+  transition: transform 220ms var(--ease-out);
+}
+
+.product-list li.is-active::before,
+.product-list li:hover::before,
+.capability-list li.is-active::before,
+.capability-list li:hover::before,
+.capability-list li:focus-visible::before {
+  transform: translateY(-50%) scaleY(1);
+}
+
+.product-name,
+.capability-name {
+  color: rgba(247, 247, 245, 0.48);
+  transition:
+    color 220ms var(--ease-out),
+    transform 220ms var(--ease-out);
 }
 
 .product-list li.is-active .product-name,
-.product-list li:hover .product-name {
+.product-list li:hover .product-name,
+.capability-list li.is-active .capability-name,
+.capability-list li:hover .capability-name,
+.capability-list li:focus-visible .capability-name {
   color: #fff;
+  transform: translateX(6px);
 }
 
-.product-list li.is-active .product-status {
+.product-list li.is-active .product-status,
+.product-list li:hover .product-status {
   color: rgba(247, 247, 245, 0.72);
 }
 
 .product-name {
-  font-size: clamp(15px, 1.15vw, 18px);
+  font-size: clamp(17px, 1.25vw, 20px);
   letter-spacing: 0.015em;
 }
 
@@ -412,23 +468,46 @@ a.product-name {
   text-decoration: none;
 }
 
-a.product-name:hover {
-  color: #fff;
-}
-
 .product-status {
   align-self: center;
-  color: var(--ui-muted);
-  font: 500 11px/1 var(--font-mono, monospace);
+  color: rgba(247, 247, 245, 0.48);
+  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.16em;
   text-transform: uppercase;
+  transition: color 220ms var(--ease-out);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-list li::before,
+  .capability-list li::before,
+  .product-name,
+  .capability-name,
+  .product-status {
+    transition: none;
+  }
+
+  .product-list li.is-active .product-name,
+  .product-list li:hover .product-name,
+  .capability-list li.is-active .capability-name,
+  .capability-list li:hover .capability-name,
+  .capability-list li:focus-visible .capability-name {
+    transform: none;
+  }
+
+  .product-list li.is-active::before,
+  .product-list li:hover::before,
+  .capability-list li.is-active::before,
+  .capability-list li:hover::before,
+  .capability-list li:focus-visible::before {
+    transform: translateY(-50%) scaleY(1);
+  }
 }
 
 .product-line {
   grid-column: 1 / -1;
   margin: 0;
   color: var(--ui-muted);
-  font-size: clamp(12px, 0.92vw, 14px);
+  font-size: clamp(14px, 1.02vw, 16px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.45;
@@ -445,7 +524,7 @@ a.product-name:hover {
 .capability-group-label {
   margin: 0 0 10px;
   color: var(--ui-muted);
-  font: 500 11px/1 var(--font-mono, monospace);
+  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -459,18 +538,13 @@ a.product-name:hover {
 }
 
 .capability-list li {
+  position: relative;
   display: grid;
   gap: 6px;
-  padding: 9px 0 10px;
+  padding: 9px 0 10px 14px;
   border-bottom: 1px solid rgba(247, 247, 245, 0.22);
-  cursor: default;
-  transition: color 160ms ease;
-}
-
-.capability-list li.is-active .capability-name,
-.capability-list li:hover .capability-name,
-.capability-list li:focus-visible .capability-name {
-  color: #fff;
+  cursor: pointer;
+  transition: color 220ms var(--ease-out);
 }
 
 .capability-list li:focus {
@@ -483,7 +557,7 @@ a.product-name:hover {
 }
 
 .capability-name {
-  font-size: clamp(15px, 1.15vw, 18px);
+  font-size: clamp(17px, 1.25vw, 20px);
   letter-spacing: 0.015em;
 }
 
@@ -513,9 +587,9 @@ a.product-name:hover {
 
 .founder-grid h3 {
   margin: 0;
-  font-family: var(--font-display, "Orbitron Variable", "Orbitron", sans-serif);
+  font-family: var(--font-display, "D-DIN-Bold", "D-DIN", sans-serif);
   font-size: clamp(22px, 1.7vw, 28px);
-  font-weight: 600;
+  font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   text-shadow: 0 0 18px rgba(0, 0, 0, 0.9), 0 1px 2px rgba(0, 0, 0, 0.8);
@@ -524,7 +598,7 @@ a.product-name:hover {
 .founder-title {
   margin: 10px 0 18px;
   color: rgba(247, 247, 245, 0.88);
-  font-size: clamp(12px, 0.95vw, 14px);
+  font-size: clamp(14px, 1.05vw, 16px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -540,7 +614,7 @@ a.product-name:hover {
   padding: 8px 0 8px 14px;
   border-top: 1px solid rgba(247, 247, 245, 0.18);
   color: var(--ui-muted);
-  font-size: clamp(12px, 0.95vw, 14px);
+  font-size: clamp(14px, 1.05vw, 16px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.45;
@@ -564,7 +638,7 @@ a.product-name:hover {
   padding-top: 18px;
   border-top: 1px solid rgba(247, 247, 245, 0.4);
   color: var(--ui-muted);
-  font-size: clamp(12px, 0.95vw, 14px);
+  font-size: clamp(14px, 1.05vw, 16px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.55;
@@ -586,7 +660,7 @@ a.product-name:hover {
 .careers-copy > p {
   margin: 30px 0 42px;
   color: var(--ui-muted);
-  font-size: clamp(18px, 1.4vw, 22px);
+  font-size: clamp(20px, 1.5vw, 24px);
   line-height: 1.45;
 }
 
@@ -611,7 +685,7 @@ a.product-name:hover {
 }
 
 .job-title {
-  font-size: clamp(15px, 1.15vw, 18px);
+  font-size: clamp(17px, 1.25vw, 20px);
   letter-spacing: 0.015em;
 }
 
@@ -622,7 +696,7 @@ a.product-name:hover {
 .job-meta {
   align-self: center;
   color: var(--ui-muted);
-  font: 500 11px/1 var(--font-mono, monospace);
+  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -631,7 +705,7 @@ a.product-name:hover {
   grid-column: 1 / -1;
   margin: 0;
   color: var(--ui-muted);
-  font-size: clamp(12px, 0.92vw, 14px);
+  font-size: clamp(14px, 1.02vw, 16px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.45;
@@ -671,9 +745,9 @@ a.product-name:hover {
 }
 
 .footer-col h2 {
-  margin: 0 0 14px;
-  color: var(--ui-muted);
-  font: 500 11px/1 var(--font-mono, monospace);
+  margin: 0 0 12px;
+  color: var(--cph4-white);
+  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -686,9 +760,9 @@ a.product-name:hover {
 
 .footer-col a {
   display: block;
-  padding: 5px 0;
-  color: rgba(247, 247, 245, 0.78);
-  font-size: 13px;
+  padding: 4px 0;
+  color: var(--cph4-silver);
+  font-size: 15px;
   font-weight: 400;
   letter-spacing: 0.02em;
   text-transform: none;
@@ -701,7 +775,7 @@ a.product-name:hover {
 .footer-meta {
   margin: 40px 0 0;
   color: var(--ui-faint);
-  font: 500 11px/1 var(--font-mono, monospace);
+  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -720,10 +794,10 @@ a.product-name:hover {
 .page-copy h1,
 .page-copy .product-detail-name {
   margin: 0;
-  font-family: var(--font-display, "Orbitron Variable", "Orbitron", sans-serif);
+  font-family: var(--font-display, "D-DIN-Bold", "D-DIN", sans-serif);
   font-size: clamp(44px, 4.2vw, 68px);
-  font-weight: 650;
-  letter-spacing: -0.03em;
+  font-weight: 400;
+  letter-spacing: 0.02em;
   line-height: 1;
   text-transform: uppercase;
 }
@@ -739,7 +813,7 @@ a.product-name:hover {
 .page-lede {
   margin: 22px 0 0;
   color: rgba(247, 247, 245, 0.88);
-  font-size: clamp(16px, 1.2vw, 20px);
+  font-size: clamp(18px, 1.3vw, 22px);
   font-weight: 400;
   line-height: 1.45;
 }
@@ -752,7 +826,7 @@ a.product-name:hover {
 .page-body p {
   margin: 0 0 14px;
   color: var(--ui-muted);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(16px, 1.15vw, 18px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.55;
@@ -766,7 +840,7 @@ a.product-name:hover {
 .page-empty {
   margin: 28px 0 0;
   color: var(--ui-muted);
-  font-size: clamp(16px, 1.2vw, 20px);
+  font-size: clamp(18px, 1.3vw, 22px);
   font-weight: 400;
   line-height: 1.45;
 }
@@ -785,7 +859,7 @@ a.product-name:hover {
 .page-siblings a,
 .page-sibling {
   color: rgba(247, 247, 245, 0.55);
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -814,20 +888,20 @@ a.product-name:hover {
 
 .note-list time {
   color: var(--ui-muted);
-  font: 500 11px/1 var(--font-mono, monospace);
+  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
 
 .note-title {
-  font-size: clamp(16px, 1.2vw, 20px);
+  font-size: clamp(18px, 1.3vw, 22px);
   letter-spacing: 0.02em;
 }
 
 .note-list p {
   margin: 0;
   color: var(--ui-muted);
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   line-height: 1.45;
   text-transform: none;

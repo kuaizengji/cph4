@@ -6,9 +6,9 @@
   --cph4-graphite: #5f5f5b;
   --cph4-rule: rgba(247, 247, 245, 0.2);
   --cph4-rule-strong: rgba(247, 247, 245, 0.5);
-  --font-display: "Orbitron Variable", "Orbitron", sans-serif;
-  --font-body: "Orbitron Variable", "Orbitron", sans-serif;
-  --font-mono: "Orbitron Variable", "Orbitron", sans-serif;
+  --font-display: "D-DIN-Bold", "D-DIN", "DIN Alternate", Arial, Verdana, sans-serif;
+  --font-body: "D-DIN", "DIN Alternate", Arial, Verdana, sans-serif;
+  --font-mono: "D-DIN", "DIN Alternate", Arial, Verdana, sans-serif;
   --page-gutter: clamp(1.25rem, 4vw, 4.75rem);
   --section-space: clamp(7rem, 12vw, 13rem);
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
