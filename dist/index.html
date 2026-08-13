@@ -13,98 +13,168 @@
     </script>
     <meta
       name="description"
-      content="CPH4.AI builds self-evolving organizations and endlessly advancing individuals."
+      content="CPH4.AI — Intelligence, without end. An organization that evolves itself. A self that never stops becoming."
     />
     <title>CPH4.AI — Augment Humanity</title>
     <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='black'/%3E%3Cpath d='M48 15 32 6 10 19v26l22 13 22-13V31H32v8h13v2L32 49 18 41V23l14-8 11 6z' fill='white'/%3E%3C/svg%3E" />
     <link rel="preload" href="./assets/home-line-field-TPV82_oh.png" as="image" />
-    <link rel="preload" href="./assets/cph4-logo-lockup-cbAovp_I.png" as="image" />
-    <script type="module" crossorigin src="./assets/index-CdNB7gmy.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-BBWdHWA8.css">
+    <link rel="preload" href="./assets/cph4-logo-lockup-cbAovp_I.png" as="image" />
+    <script type="module" crossorigin src="./assets/main-FsWtxCZi.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/world-DWUoltgd.js">
+    <link rel="stylesheet" crossorigin href="./assets/world-BabB14G_.css">
   </head>
   <body>
     <a class="skip-link" href="#home">Skip to content</a>
 
-    <div class="experience" data-experience>
-      <canvas class="line-world" data-line-world aria-hidden="true"></canvas>
-      <div class="grain" aria-hidden="true"></div>
-
-      <header class="site-header" data-header>
-        <a class="brand" href="#home" data-go="0" aria-label="CPH4.AI home">
-          <img src="./assets/cph4-logo-lockup-cbAovp_I.png" alt="CPH4.AI — Augment Humanity" />
-        </a>
-
-        <nav class="site-nav" aria-label="Primary navigation">
-          <a href="#organization" data-go="1">Organization</a>
-          <a href="#individual" data-go="2">Individual</a>
-          <a href="#domains" data-go="3">Domains</a>
-          <a href="#about" data-go="4">About</a>
-        </nav>
-
-        <a class="contact-link" href="mailto:hello@cph4.ai">
-          <span aria-hidden="true"></span>
-          Contact
-        </a>
-      </header>
-
-      <main class="panel-stack" aria-live="polite">
-        <section class="panel panel-home is-active" id="home" data-panel="0" aria-labelledby="home-title">
-          <div class="panel-copy hero-copy">
-            <h1 id="home-title">Intelligence,<br />without end.</h1>
-            <p>Self-evolving organizations.<br />Endlessly advancing individuals.</p>
-            <a class="outline-cta" href="#organization" data-go="1">Enter CPH4</a>
-          </div>
-        </section>
-
-        <section class="panel panel-organization" id="organization" data-panel="1" aria-labelledby="organization-title">
-          <div class="panel-copy organization-copy">
-            <p class="eyebrow">01 / Organization</p>
-            <h2 id="organization-title">An organization<br />that evolves itself.</h2>
-            <p class="section-lede">Agentic systems that sense, decide, execute, and learn across the enterprise.</p>
-            <p class="section-note">A living intelligence layer for operations, knowledge, and growth.</p>
-          </div>
-        </section>
-
-        <section class="panel panel-individual" id="individual" data-panel="2" aria-labelledby="individual-title">
-          <div class="panel-copy individual-copy">
-            <p class="eyebrow">02 / Individual</p>
-            <h2 id="individual-title">A self that never<br />stops becoming.</h2>
-            <p class="section-lede">Intelligence that amplifies capability, identity, and human potential.</p>
-            <p class="section-note">An evolving digital counterpart built around the person.</p>
-          </div>
-        </section>
-
-        <section class="panel panel-domains" id="domains" data-panel="3" aria-labelledby="domains-title">
-          <div class="panel-copy domains-copy">
-            <p class="eyebrow">03 / Expansion</p>
-            <h2 id="domains-title">Built to expand.</h2>
-            <p class="lede">One intelligence architecture. Any frontier.</p>
-            <ol class="domain-list">
-              <li><span>01</span>Artificial Intelligence</li>
-              <li><span>02</span>Digital Human</li>
-              <li><span>03</span>Biopharma</li>
-              <li><span>04</span>Education</li>
-              <li><span>05</span>Enterprise Systems</li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="panel panel-about" id="about" data-panel="4" aria-labelledby="about-title">
-          <div class="panel-copy about-copy">
-            <p class="eyebrow">04 / Continuum</p>
-            <h2 id="about-title">We are not building<br />the future.</h2>
-            <p>We are building what keeps becoming it.</p>
-            <a class="outline-cta outline-cta-wide" href="mailto:hello@cph4.ai">Start a conversation</a>
-          </div>
-        </section>
-      </main>
-
+    <div class="backdrop" data-experience aria-hidden="true">
+      <canvas class="line-world" data-line-world></canvas>
+      <div class="grain"></div>
       <p class="fallback-message">This desktop experience requires WebGL.</p>
     </div>
 
-    <div class="scroll-track" aria-hidden="true">
-      <div></div><div></div><div></div><div></div><div></div>
-    </div>
+    <header class="site-header" data-header>
+      <a class="brand" href="#home" aria-label="CPH4.AI home">
+        <img src="./assets/cph4-logo-lockup-cbAovp_I.png" alt="CPH4.AI — Augment Humanity" />
+      </a>
 
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#products" data-section="products">Products</a>
+        <a href="#capabilities" data-section="capabilities">Capabilities</a>
+        <a href="#company" data-section="company">Company</a>
+        <a href="./blog/index.html" data-section="blogs">Blogs</a>
+        <a href="#careers" data-section="careers">Careers</a>
+      </nav>
+
+      <a class="contact-link" href="mailto:nemoarce2007@gmail.com">
+        <span aria-hidden="true"></span>
+        Contact
+      </a>
+    </header>
+
+    <main class="site-main" data-main>
+      <section class="section section-home is-active" id="home" data-panel="0" aria-labelledby="home-title">
+        <div class="section-copy hero-copy">
+          <h1 id="home-title">Intelligence,<br />without end.</h1>
+          <p>An organization that evolves itself.<br />A self that never stops becoming.</p>
+        </div>
+      </section>
+
+      <section class="section section-products" id="products" data-panel="1" aria-labelledby="products-title">
+        <aside class="products-detail section-copy" data-product-detail aria-live="polite"></aside>
+        <div class="section-copy products-copy">
+          <p class="eyebrow">01 / Products</p>
+          <h2 id="products-title">In motion.</h2>
+          <ul class="product-list" data-product-list>
+            <li data-slug="kuaizengji">
+              <a class="product-name" href="./products/kuaizengji.html">Kuaizengji</a>
+              <span class="product-status">Live</span>
+            </li>
+            <li data-slug="kuaizengji-3">
+              <a class="product-name" href="./products/kuaizengji-3.html">Kuaizengji 3.0</a>
+              <span class="product-status">Coming</span>
+            </li>
+            <li data-slug="taoran">
+              <a class="product-name" href="./products/taoran.html">Taoran Agent</a>
+              <span class="product-status">Demo</span>
+            </li>
+            <li data-slug="verdict">
+              <a class="product-name" href="./products/verdict.html">Verdict</a>
+              <span class="product-status">Building</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section-capabilities" id="capabilities" data-panel="2" aria-labelledby="capabilities-title">
+        <aside class="capabilities-detail section-copy" data-capability-detail aria-live="polite"></aside>
+        <div class="section-copy capabilities-copy">
+          <p class="eyebrow">02 / Capabilities</p>
+          <h2 id="capabilities-title">The stack.</h2>
+          <div class="capability-groups" data-capability-list>
+            <div class="capability-group">
+              <p class="capability-group-label">Applied</p>
+              <ul class="capability-list">
+                <li data-slug="rpa" tabindex="0">
+                  <span class="capability-name">RPA</span>
+                </li>
+                <li data-slug="aeo" tabindex="0">
+                  <span class="capability-name">AEO</span>
+                </li>
+                <li data-slug="digital-humans" tabindex="0">
+                  <span class="capability-name">Digital humans</span>
+                </li>
+              </ul>
+            </div>
+            <div class="capability-group">
+              <p class="capability-group-label">Media</p>
+              <ul class="capability-list">
+                <li data-slug="video-gen" tabindex="0">
+                  <span class="capability-name">Video Gen</span>
+                </li>
+                <li data-slug="asr" tabindex="0">
+                  <span class="capability-name">ASR</span>
+                </li>
+                <li data-slug="tts" tabindex="0">
+                  <span class="capability-name">TTS</span>
+                </li>
+                <li data-slug="voice-clone" tabindex="0">
+                  <span class="capability-name">Voice Clone</span>
+                </li>
+              </ul>
+            </div>
+            <div class="capability-group">
+              <p class="capability-group-label">Foundation</p>
+              <ul class="capability-list">
+                <li data-slug="ontology" tabindex="0">
+                  <span class="capability-name">Ontology</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-company" id="company" data-panel="3" aria-labelledby="company-title">
+        <div class="section-copy company-copy">
+          <p class="eyebrow">03 / Company</p>
+          <h2 id="company-title" class="visually-hidden">Company</h2>
+          <div class="founder-grid">
+            <article>
+              <h3>Jimmy Xu</h3>
+              <p class="founder-title">Co-Founder &amp; Chairman of the Board</p>
+              <ul>
+                <li>Hong Kong Baptist University (Zhuhai Campus), Computer Science</li>
+                <li>Co-founded CPH4 and Kuaizengji</li>
+                <li>SunnyOJ, an online judge platform</li>
+                <li>Product and strategy</li>
+              </ul>
+            </article>
+            <article>
+              <h3>Jason Guo</h3>
+              <p class="founder-title">Co-Founder &amp; CEO</p>
+              <ul>
+                <li>Hong Kong University of Science and Technology (Guangzhou), Artificial Intelligence</li>
+                <li>Co-founded CPH4 and Kuaizengji</li>
+                <li>Research and finance</li>
+              </ul>
+            </article>
+          </div>
+          <p class="origin-note">The name comes from <em>Lucy</em>: CPH4 was the catalyst that unlocked unused capacity. We build that catalyst as AI.</p>
+        </div>
+      </section>
+
+      <section class="section section-careers" id="careers" data-panel="4" aria-labelledby="careers-title">
+        <div class="section-copy careers-copy">
+          <p class="eyebrow">04 / Careers</p>
+          <h2 id="careers-title">Small teams.<br />You ship.</h2>
+          <p>High agency. Leverage, not headcount.</p>
+          <ul class="job-list" data-jobs></ul>
+          <a class="outline-cta outline-cta-wide" href="mailto:nemoarce2007@gmail.com?subject=Careers">Write to us</a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" data-footer></footer>
+
   </body>
 </html>
