@@ -6,6 +6,7 @@ import {
   capabilityIntroHtml,
   mountFooter,
   mountJobs,
+  mountNavToggle,
   productIntroHtml,
   products,
 } from "./site";
@@ -87,6 +88,11 @@ const mountProductDetail = () => {
     if (!slug) return;
     item.addEventListener("pointerenter", () => show(slug));
     item.addEventListener("focusin", () => show(slug));
+    item.addEventListener("click", (event) => {
+      const target = event.target as HTMLElement | null;
+      if (target?.closest("a")) return;
+      show(slug);
+    });
   });
 
   if (activeSlug) show(activeSlug);
@@ -119,6 +125,7 @@ const mountCapabilityDetail = () => {
     if (!slug) return;
     item.addEventListener("pointerenter", () => show(slug));
     item.addEventListener("focusin", () => show(slug));
+    item.addEventListener("click", () => show(slug));
   });
 
   if (activeSlug) show(activeSlug);
@@ -126,6 +133,7 @@ const mountCapabilityDetail = () => {
 
 mountFooter();
 mountJobs();
+mountNavToggle();
 mountProductDetail();
 mountCapabilityDetail();
 

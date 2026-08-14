@@ -35,7 +35,7 @@ export const createLineWorld = async (canvas: HTMLCanvasElement): Promise<LineWo
     return null;
   }
 
-  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75));
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth <= 1099 ? 1.25 : 1.75));
   renderer.setSize(window.innerWidth, window.innerHeight, false);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
 
@@ -148,13 +148,19 @@ export const createLineWorld = async (canvas: HTMLCanvasElement): Promise<LineWo
         wave = pow(wave, 20.0);
         float frontRadius = fract(phase * 0.65) * 1.18;
         float front = exp(-pow((radius - frontRadius) * 38.0, 2.0));
+        float frontR = exp(-pow((radius - frontRadius - 0.014) * 38.0, 2.0));
+        float frontB = exp(-pow((radius - frontRadius + 0.014) * 38.0, 2.0));
         float echoRadius = fract(phase * 0.65 + 0.36) * 1.18;
         float echo = exp(-pow((radius - echoRadius) * 46.0, 2.0)) * 0.42;
         float pulseStrength = 0.72 + uPush * 1.02 + min(uVelocity, 1.0) * 1.5;
+        float dispersion = (0.13 + uPush * 0.06 + min(uVelocity, 1.0) * 0.08)
+          * smoothstep(0.05, 0.14, radius)
+          * (1.0 - smoothstep(0.48, 1.08, radius));
+        vec3 frontChroma = mix(vec3(front), vec3(frontR, front, frontB), dispersion);
 
         vec3 color = source * (2.35 + uPush * 0.18);
-        color += vec3(lineMask * (wave * 1.05 + front * 2.15 + echo * 1.35) * pulseStrength);
-        color += vec3((front + echo) * (0.052 + uVelocity * 0.045));
+        color += lineMask * (vec3(wave * 1.05) + frontChroma * 2.15 + vec3(echo * 1.35)) * pulseStrength;
+        color += (frontChroma + vec3(echo)) * (0.052 + uVelocity * 0.045);
 
         float focusGlow = exp(-radius * 54.0) * (0.26 + uPush * 0.82 + uVelocity * 0.22);
         color += vec3(focusGlow * (0.72 + lineMask));
@@ -195,6 +201,7 @@ export const createLineWorld = async (canvas: HTMLCanvasElement): Promise<LineWo
       lastProgress = next;
     },
     resize: () => {
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, window.innerWidth <= 1099 ? 1.25 : 1.75));
       renderer.setSize(window.innerWidth, window.innerHeight, false);
       material.uniforms.uResolution.value.set(window.innerWidth, window.innerHeight);
     },

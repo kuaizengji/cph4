@@ -243,7 +243,7 @@ Write to us  →  mailto:nemoarce2007@gmail.com?subject=Careers
 
 - 实现：`index.html` / `styles.css` / `main.ts` / `page.ts` / `site.ts` / `world.ts`。主页 `SECTION_COUNT = 5`。内页共用线框世界，定在 Products 焦点。
 - 视觉：黑白线框世界、Orbitron；主页单页原生滚动，背景 canvas 固定，ScrollTrigger 把滚动进度映射到世界 zoom/focus。
-- 本版未做移动端（旧站 `min-width: 1100px` 未改）。
+- 本版已做移动端适配：去掉 `min-width: 1100px`，`max-width: 1099px` 单列 + 汉堡导航，触屏 tap 切换详情。
 - `dist/` 若用于 `file://` 预览，改完需重新 `npm run build`。
 
 ---
