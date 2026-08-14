@@ -7,6 +7,7 @@ import {
   mountFooter,
   mountJobs,
   mountNavToggle,
+  mountNotes,
   productIntroHtml,
   products,
 } from "./site";
@@ -20,7 +21,6 @@ const reducedMotion = !forceMotion && window.matchMedia("(prefers-reduced-motion
 const canvas = document.querySelector<HTMLCanvasElement>("[data-line-world]");
 const main = document.querySelector<HTMLElement>("[data-main]");
 const panels = [...document.querySelectorAll<HTMLElement>("[data-panel]")];
-const navLinks = [...document.querySelectorAll<HTMLAnchorElement>("a[href^='#']")];
 const siteNavLinks = [...document.querySelectorAll<HTMLAnchorElement>(".site-nav a[data-section]")];
 
 if (!canvas) throw new Error("Missing line-world canvas");
@@ -141,6 +141,7 @@ const mountCapabilityDetail = () => {
 
 mountFooter();
 mountJobs();
+mountNotes();
 mountNavToggle();
 mountProductDetail();
 mountCapabilityDetail();
@@ -159,16 +160,17 @@ ScrollTrigger.create({
   onUpdate: syncScroll,
 });
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const href = link.getAttribute("href");
-    if (!href || !href.startsWith("#")) return;
-    if (!document.querySelector(href)) return;
+document.addEventListener("click", (event) => {
+  const target = event.target as HTMLElement | null;
+  const link = target?.closest<HTMLAnchorElement>("a[href^='#']");
+  if (!link) return;
+  const href = link.getAttribute("href");
+  if (!href || !href.startsWith("#")) return;
+  if (!document.querySelector(href)) return;
 
-    event.preventDefault();
-    scrollToSection(href, reducedMotion ? "auto" : "smooth");
-    history.replaceState(null, "", href);
-  });
+  event.preventDefault();
+  scrollToSection(href, reducedMotion ? "auto" : "smooth");
+  history.replaceState(null, "", href);
 });
 
 window.addEventListener("resize", () => {

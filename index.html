@@ -3,12 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#000000" />
+    <style>html,body{background:#000}</style>
     <script>
       if (window.location.protocol === "file:") {
         window.location.replace(
           new URL("./dist/index.html?motion=1", window.location.href).href,
         );
+      }
+      if (window.location.hash) {
+        history.scrollRestoration = "manual";
       }
     </script>
     <meta
@@ -39,7 +44,7 @@
         <a href="#products" data-section="products">Products</a>
         <a href="#capabilities" data-section="capabilities">Capabilities</a>
         <a href="#company" data-section="company">Company</a>
-        <a href="./blog/index.html" data-section="blogs">Blogs</a>
+        <a href="#blogs" data-section="blogs">Blogs</a>
         <a href="#careers" data-section="careers">Careers</a>
       </nav>
 
@@ -173,9 +178,19 @@
         </div>
       </section>
 
-      <section class="section section-careers" id="careers" data-panel="4" aria-labelledby="careers-title">
+      <section class="section section-blogs" id="blogs" data-panel="4" aria-labelledby="blogs-title">
+        <div class="section-copy blogs-copy">
+          <p class="eyebrow">04 / Blogs</p>
+          <h2 id="blogs-title">Blogs</h2>
+          <div data-notes>
+            <p class="page-empty">Nothing filed yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-careers" id="careers" data-panel="5" aria-labelledby="careers-title">
         <div class="section-copy careers-copy">
-          <p class="eyebrow">04 / Careers</p>
+          <p class="eyebrow">05 / Careers</p>
           <h2 id="careers-title">Small teams.<br />You ship.</h2>
           <p>High agency. Leverage, not headcount.</p>
           <ul class="job-list" data-jobs></ul>

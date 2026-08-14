@@ -263,6 +263,25 @@ export const mountJobs = () => {
     .join("");
 };
 
+export const mountNotes = () => {
+  const root = document.querySelector("[data-notes]");
+  if (!root) return;
+  if (notes.length === 0) return;
+
+  root.innerHTML = `<ul class="note-list">${notes
+    .map(
+      (note) => `
+        <li>
+          <a href="${rootHref(`blog/${note.slug}.html`)}">
+            <time datetime="${escapeHtml(note.date)}">${escapeHtml(note.date)}</time>
+            <span class="note-title">${escapeHtml(note.title)}</span>
+            <p>${escapeHtml(note.excerpt)}</p>
+          </a>
+        </li>`,
+    )
+    .join("")}</ul>`;
+};
+
 export const mountFooter = () => {
   const root = document.querySelector("[data-footer]");
   if (!root) return;
@@ -296,13 +315,13 @@ export const mountFooter = () => {
       <div class="footer-col">
         <h2>Blogs</h2>
         <ul>
-          <li><a href="${rootHref("blog/index.html")}">All posts</a></li>
+          <li><a href="${sectionHref("blogs")}">All posts</a></li>
         </ul>
       </div>
       <div class="footer-col">
         <h2>Contact</h2>
         <ul>
-          <li><a href="mailto:nemoarce2007@gmail.com">nemoarce2007@gmail.com</a></li>
+          <li><a class="footer-mail" href="mailto:nemoarce2007@gmail.com">nemoarce2007@gmail.com</a></li>
         </ul>
       </div>
     </div>
