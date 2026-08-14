@@ -347,6 +347,7 @@ a:focus-visible {
 .section-products,
 .section-capabilities,
 .section-company,
+.section-blogs,
 .section-careers {
   display: flex;
   align-items: flex-start;
@@ -577,14 +578,14 @@ a.product-name {
 .capability-groups {
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 28px;
   margin-top: 20px;
 }
 
 .capability-group-label {
-  margin: 0 0 10px;
+  margin: 0 0 8px;
   color: var(--ui-muted);
-  font: 500 14px/1 var(--font-mono, "D-DIN", sans-serif);
+  font: 500 15px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -709,6 +710,22 @@ a.product-name {
   font-style: italic;
 }
 
+.blogs-copy {
+  width: min(720px, 52vw);
+}
+
+.blogs-copy h2 {
+  font-size: clamp(48px, 4.25vw, 66px);
+}
+
+.blogs-copy .page-empty {
+  margin-top: 28px;
+}
+
+.blogs-copy .note-list {
+  margin-top: 28px;
+}
+
 .careers-copy {
   width: min(610px, 40vw);
 }
@@ -806,8 +823,10 @@ a.product-name {
 
 .footer-col h2 {
   margin: 0 0 12px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--cph4-rule);
   color: var(--cph4-white);
-  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
+  font: 500 15px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -830,6 +849,16 @@ a.product-name {
 
 .footer-col a:hover {
   color: #fff;
+}
+
+.footer-mail {
+  text-underline-offset: 0.22em;
+}
+
+.footer-col a.footer-mail:hover {
+  color: var(--cph4-silver);
+  text-decoration: underline;
+  text-decoration-color: rgba(247, 247, 245, 0.45);
 }
 
 .footer-meta {
@@ -1077,6 +1106,7 @@ a.product-name {
   .section-products,
   .section-capabilities,
   .section-company,
+  .section-blogs,
   .section-careers {
     padding-top: calc(var(--header-height) + 36px);
   }
@@ -1086,6 +1116,7 @@ a.product-name {
   .products-copy,
   .capabilities-copy,
   .company-copy,
+  .blogs-copy,
   .careers-copy,
   .page-siblings {
     width: 100%;
@@ -1112,6 +1143,7 @@ a.product-name {
   .section h2,
   .products-copy h2,
   .capabilities-copy h2,
+  .blogs-copy h2,
   .careers-copy h2 {
     font-size: clamp(40px, 10vw, 58px);
   }

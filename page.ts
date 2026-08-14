@@ -3,7 +3,6 @@ import {
   jobs,
   mountFooter,
   mountNavToggle,
-  notes,
   productHref,
   productIntroHtml,
   products,
@@ -14,8 +13,6 @@ import { createLineWorld } from "./world";
 const canvas = document.querySelector<HTMLCanvasElement>("[data-line-world]");
 const pageRoot = document.querySelector("[data-page-root]");
 const slug = document.body.dataset.product ?? document.body.dataset.job;
-const pageKind = document.body.dataset.page;
-const isBlogs = pageKind === "blogs" || pageKind === "notes";
 const isJob = Boolean(document.body.dataset.job);
 
 if (!canvas) throw new Error("Missing line-world canvas");
@@ -49,33 +46,6 @@ const renderProduct = () => {
   `;
 };
 
-const renderBlogs = () => {
-  document.title = "Blogs — CPH4.AI";
-  document.querySelector(".site-nav a[data-section='blogs']")?.classList.add("is-active");
-
-  const list =
-    notes.length === 0
-      ? `<p class="page-empty">Nothing filed yet.</p>`
-      : `<ul class="note-list">${notes
-          .map(
-            (note) => `
-              <li>
-                <a href="${rootHref(`blog/${note.slug}.html`)}">
-                  <time datetime="${escapeHtml(note.date)}">${escapeHtml(note.date)}</time>
-                  <span class="note-title">${escapeHtml(note.title)}</span>
-                  <p>${escapeHtml(note.excerpt)}</p>
-                </a>
-              </li>`,
-          )
-          .join("")}</ul>`;
-
-  pageRoot.innerHTML = `
-    <p class="eyebrow">Blogs</p>
-    <h1>Blogs</h1>
-    ${list}
-  `;
-};
-
 const renderJob = () => {
   const job = jobs.find((entry) => entry.slug === slug);
   document.querySelector(".site-nav a[data-section='careers']")?.classList.add("is-active");
@@ -99,8 +69,7 @@ const renderJob = () => {
   `;
 };
 
-if (isBlogs) renderBlogs();
-else if (isJob) renderJob();
+if (isJob) renderJob();
 else renderProduct();
 
 mountFooter();

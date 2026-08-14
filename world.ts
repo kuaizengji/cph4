@@ -1,6 +1,6 @@
 import * as THREE from "three";
 
-export const SECTION_COUNT = 5;
+export const SECTION_COUNT = 6;
 const HOME_FOCUS = new THREE.Vector2(688 / 1536, 1 - 748 / 1024);
 const TEXTURE_FOCUS = new THREE.Vector2(690 / 1536, 1 - 740 / 1024);
 const FOCUS_STATES = [
@@ -8,9 +8,10 @@ const FOCUS_STATES = [
   new THREE.Vector2(0.39, 0.29),
   new THREE.Vector2(0.5, 0.3),
   new THREE.Vector2(0.62, 0.3),
+  new THREE.Vector2(0.64, 0.29),
   new THREE.Vector2(0.66, 0.28),
 ];
-const ZOOM_STATES = [1, 1.08, 1.12, 1.17, 1.22];
+const ZOOM_STATES = [1, 1.08, 1.12, 1.17, 1.2, 1.22];
 
 export type LineWorld = {
   setPosition: (position: number, impulse?: number) => void;
