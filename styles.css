@@ -531,7 +531,7 @@ a.product-name {
 .product-status {
   align-self: center;
   color: rgba(247, 247, 245, 0.48);
-  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
+  font: 500 14px/1 var(--font-mono, "D-DIN", sans-serif);
   letter-spacing: 0.16em;
   text-transform: uppercase;
   transition: color 220ms var(--ease-out);
@@ -584,8 +584,8 @@ a.product-name {
 .capability-group-label {
   margin: 0 0 10px;
   color: var(--ui-muted);
-  font: 500 13px/1 var(--font-mono, "D-DIN", sans-serif);
-  letter-spacing: 0.16em;
+  font: 500 14px/1 var(--font-mono, "D-DIN", sans-serif);
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
@@ -601,7 +601,7 @@ a.product-name {
   position: relative;
   display: grid;
   gap: 6px;
-  padding: 9px 0 10px 14px;
+  padding: 13px 0 14px 14px;
   border-bottom: 1px solid rgba(247, 247, 245, 0.22);
   cursor: pointer;
   transition: color 220ms var(--ease-out);
@@ -658,7 +658,7 @@ a.product-name {
 .founder-title {
   margin: 10px 0 18px;
   color: rgba(247, 247, 245, 0.88);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(15px, 1.08vw, 17px);
   letter-spacing: 0.06em;
   text-transform: uppercase;
 }
@@ -674,7 +674,7 @@ a.product-name {
   padding: 8px 0 8px 14px;
   border-top: 1px solid rgba(247, 247, 245, 0.18);
   color: var(--ui-muted);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(15px, 1.08vw, 17px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.45;
@@ -698,7 +698,7 @@ a.product-name {
   padding-top: 18px;
   border-top: 1px solid rgba(247, 247, 245, 0.4);
   color: var(--ui-muted);
-  font-size: clamp(14px, 1.05vw, 16px);
+  font-size: clamp(15px, 1.08vw, 17px);
   font-weight: 400;
   letter-spacing: 0.01em;
   line-height: 1.55;
