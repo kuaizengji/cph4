@@ -309,3 +309,34 @@ export const mountFooter = () => {
     <p class="footer-meta">&copy; 2026 CPH4.AI</p>
   `;
 };
+
+export const mountNavToggle = () => {
+  const toggle = document.querySelector<HTMLButtonElement>("[data-nav-toggle]");
+  const nav = document.querySelector<HTMLElement>(".site-nav");
+  if (!toggle || !nav) return;
+
+  const setOpen = (open: boolean) => {
+    document.documentElement.toggleAttribute("data-nav-open", open);
+    nav.classList.toggle("is-open", open);
+    toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  };
+
+  toggle.addEventListener("click", () => {
+    setOpen(!document.documentElement.hasAttribute("data-nav-open"));
+  });
+
+  nav.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => setOpen(false));
+  });
+
+  document.querySelector(".contact-link")?.addEventListener("click", () => setOpen(false));
+
+  window.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") setOpen(false);
+  });
+
+  window.matchMedia("(max-width: 1099px)").addEventListener("change", (event) => {
+    if (!event.matches) setOpen(false);
+  });
+};

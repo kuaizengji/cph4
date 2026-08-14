@@ -2,6 +2,7 @@ import {
   escapeHtml,
   jobs,
   mountFooter,
+  mountNavToggle,
   notes,
   productHref,
   productIntroHtml,
@@ -103,6 +104,7 @@ else if (isJob) renderJob();
 else renderProduct();
 
 mountFooter();
+mountNavToggle();
 
 createLineWorld(canvas).then((world) => {
   world?.setPosition(1);
