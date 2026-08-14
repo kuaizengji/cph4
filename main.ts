@@ -61,6 +61,14 @@ const syncScroll = (self?: ScrollTrigger) => {
   updateActiveSection(nextProgress);
 };
 
+const scrollToSection = (hash: string, behavior: ScrollBehavior = "smooth") => {
+  if (!hash.startsWith("#") || hash.length < 2) return false;
+  const target = document.querySelector<HTMLElement>(hash);
+  if (!target) return false;
+  target.scrollIntoView({ behavior, block: "start" });
+  return true;
+};
+
 const mountProductDetail = () => {
   const detail = document.querySelector<HTMLElement>("[data-product-detail]");
   const list = document.querySelector<HTMLElement>("[data-product-list]");
@@ -155,11 +163,10 @@ navLinks.forEach((link) => {
   link.addEventListener("click", (event) => {
     const href = link.getAttribute("href");
     if (!href || !href.startsWith("#")) return;
-    const target = document.querySelector<HTMLElement>(href);
-    if (!target) return;
+    if (!document.querySelector(href)) return;
 
     event.preventDefault();
-    target.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+    scrollToSection(href, reducedMotion ? "auto" : "smooth");
     history.replaceState(null, "", href);
   });
 });
@@ -169,6 +176,12 @@ window.addEventListener("resize", () => {
   ScrollTrigger.refresh();
   syncScroll();
 });
+
+if (location.hash) {
+  history.scrollRestoration = "manual";
+  scrollToSection(location.hash, "auto");
+  ScrollTrigger.refresh();
+}
 
 syncScroll();
 document.documentElement.dataset.inputMode = "scroll";

@@ -19,7 +19,6 @@
 
 html {
   background: #000;
-  scroll-behavior: smooth;
   scrollbar-width: none;
 }
 
@@ -969,10 +968,6 @@ a.product-name {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
   .grain {
     animation: none;
   }
