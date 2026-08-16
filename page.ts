@@ -7,7 +7,7 @@ import {
   rootHref,
   escapeHtml,
 } from "./site";
-import { createLineWorld } from "./world";
+import { shouldCreateWorld } from "./world-config";
 
 const canvas = document.querySelector<HTMLCanvasElement>("[data-line-world]");
 const pageRoot = document.querySelector("[data-page-root]");
@@ -58,7 +58,11 @@ else renderProduct();
 mountFooter();
 mountNavToggle();
 
-createLineWorld(canvas).then((world) => {
-  world?.setPosition(1);
-  window.addEventListener("resize", () => world?.resize());
-});
+if (shouldCreateWorld()) {
+  void import("./world").then(({ createLineWorld }) =>
+    createLineWorld(canvas).then((world) => {
+      world?.setPosition(1);
+      window.addEventListener("resize", () => world?.resize());
+    }),
+  );
+}
