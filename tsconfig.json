@@ -12,5 +12,5 @@
     "noEmit": true,
     "strict": true
   },
-  "include": ["main.ts", "page.ts", "site.ts", "world.ts"]
+  "include": ["main.ts", "page.ts", "site.ts", "world.ts", "world-config.ts", "world-engine.ts", "world-worker.ts"]
 }
