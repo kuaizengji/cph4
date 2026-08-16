@@ -1,6 +1,8 @@
 import * as THREE from "three";
+import { SECTION_COUNT } from "./world-config";
 
-export const SECTION_COUNT = 6;
+export { SECTION_COUNT };
+
 const HOME_FOCUS = new THREE.Vector2(688 / 1536, 1 - 748 / 1024);
 const TEXTURE_FOCUS = new THREE.Vector2(690 / 1536, 1 - 740 / 1024);
 const FOCUS_STATES = [
@@ -184,13 +186,23 @@ export const createLineWorld = async (canvas: HTMLCanvasElement): Promise<LineWo
   };
 
   const clock = new THREE.Clock();
+  let raf = 0;
+
   const render = () => {
+    if (document.hidden) {
+      raf = 0;
+      return;
+    }
     velocity *= 0.925;
     material.uniforms.uTime.value = clock.getElapsedTime();
     apply(lastProgress);
     renderer.render(scene, camera);
-    requestAnimationFrame(render);
+    raf = requestAnimationFrame(render);
   };
+
+  document.addEventListener("visibilitychange", () => {
+    if (!document.hidden && raf === 0) render();
+  });
 
   render();
 

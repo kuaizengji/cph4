@@ -1,6 +1,3 @@
-import * as THREE from "three";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
   capabilities,
   capabilityIntroHtml,
@@ -11,12 +8,16 @@ import {
   productIntroHtml,
   products,
 } from "./site";
-import { SECTION_COUNT, createLineWorld } from "./world";
+import { SECTION_COUNT, shouldCreateWorld } from "./world-config";
 
-gsap.registerPlugin(ScrollTrigger);
+type LineWorld = {
+  setPosition: (position: number, impulse?: number) => void;
+  resize: () => void;
+};
 
 const forceMotion = new URLSearchParams(window.location.search).has("motion");
 const reducedMotion = !forceMotion && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const clamp = (value: number, min: number, max: number) => Math.min(max, Math.max(min, value));
 
 const canvas = document.querySelector<HTMLCanvasElement>("[data-line-world]");
 const main = document.querySelector<HTMLElement>("[data-main]");
@@ -26,11 +27,20 @@ const siteNavLinks = [...document.querySelectorAll<HTMLAnchorElement>(".site-nav
 if (!canvas) throw new Error("Missing line-world canvas");
 if (!main) throw new Error("Missing main");
 
-let world: Awaited<ReturnType<typeof createLineWorld>>;
+let world: LineWorld | null = null;
 let lastProgress = 0;
+let lastActiveIndex = -1;
+let mainHeight = 0;
+let scrollTick = 0;
+
+const measureMain = () => {
+  mainHeight = main.offsetHeight;
+};
 
 const updateActiveSection = (position: number) => {
-  const activeIndex = THREE.MathUtils.clamp(Math.round(position), 0, SECTION_COUNT - 1);
+  const activeIndex = clamp(Math.round(position), 0, SECTION_COUNT - 1);
+  if (activeIndex === lastActiveIndex) return;
+  lastActiveIndex = activeIndex;
 
   panels.forEach((panel, index) => {
     panel.classList.toggle("is-active", index === activeIndex);
@@ -47,18 +57,20 @@ const updateActiveSection = (position: number) => {
   document.documentElement.dataset.section = String(activeIndex + 1).padStart(2, "0");
 };
 
-const syncScroll = (self?: ScrollTrigger) => {
-  const progress =
-    self?.progress ??
-    THREE.MathUtils.clamp(
-      window.scrollY / Math.max(1, main.offsetHeight - window.innerHeight),
-      0,
-      1,
-    );
-  const nextProgress = THREE.MathUtils.clamp(progress, 0, 1) * (SECTION_COUNT - 1);
+const syncScroll = () => {
+  const progress = clamp(window.scrollY / Math.max(1, mainHeight - window.innerHeight), 0, 1);
+  const nextProgress = progress * (SECTION_COUNT - 1);
   lastProgress = nextProgress;
   world?.setPosition(nextProgress);
   updateActiveSection(nextProgress);
+};
+
+const onScroll = () => {
+  if (scrollTick) return;
+  scrollTick = requestAnimationFrame(() => {
+    scrollTick = 0;
+    syncScroll();
+  });
 };
 
 const scrollToSection = (hash: string, behavior: ScrollBehavior = "smooth") => {
@@ -77,15 +89,16 @@ const mountProductDetail = () => {
   const items = [...list.querySelectorAll<HTMLElement>("li[data-slug]")];
   let activeSlug = products[0]?.slug ?? "";
 
-  const show = (slug: string) => {
+  const show = (slug: string, animate = true) => {
     const product = products.find((entry) => entry.slug === slug);
     if (!product) return;
     activeSlug = product.slug;
     detail.classList.remove("is-fresh");
     detail.innerHTML = productIntroHtml(product, { heading: "h2" });
     detail.dataset.slug = product.slug;
-    void detail.offsetWidth;
-    detail.classList.add("is-fresh");
+    if (animate) {
+      requestAnimationFrame(() => detail.classList.add("is-fresh"));
+    }
     items.forEach((item) => {
       item.classList.toggle("is-active", item.dataset.slug === product.slug);
     });
@@ -103,7 +116,7 @@ const mountProductDetail = () => {
     });
   });
 
-  if (activeSlug) show(activeSlug);
+  if (activeSlug) show(activeSlug, false);
 };
 
 const mountCapabilityDetail = () => {
@@ -114,15 +127,16 @@ const mountCapabilityDetail = () => {
   const items = [...list.querySelectorAll<HTMLElement>("li[data-slug]")];
   let activeSlug = capabilities[0]?.slug ?? "";
 
-  const show = (slug: string) => {
+  const show = (slug: string, animate = true) => {
     const capability = capabilities.find((entry) => entry.slug === slug);
     if (!capability) return;
     activeSlug = capability.slug;
     detail.classList.remove("is-fresh");
     detail.innerHTML = capabilityIntroHtml(capability, { heading: "h2" });
     detail.dataset.slug = capability.slug;
-    void detail.offsetWidth;
-    detail.classList.add("is-fresh");
+    if (animate) {
+      requestAnimationFrame(() => detail.classList.add("is-fresh"));
+    }
     items.forEach((item) => {
       item.classList.toggle("is-active", item.dataset.slug === capability.slug);
     });
@@ -136,7 +150,7 @@ const mountCapabilityDetail = () => {
     item.addEventListener("click", () => show(slug));
   });
 
-  if (activeSlug) show(activeSlug);
+  if (activeSlug) show(activeSlug, false);
 };
 
 mountFooter();
@@ -146,19 +160,14 @@ mountNavToggle();
 mountProductDetail();
 mountCapabilityDetail();
 
-createLineWorld(canvas).then((instance) => {
-  world = instance;
-  world?.setPosition(lastProgress);
-});
-
-ScrollTrigger.create({
-  trigger: main,
-  start: "top top",
-  end: "bottom bottom",
-  scrub: true,
-  invalidateOnRefresh: true,
-  onUpdate: syncScroll,
-});
+if (shouldCreateWorld()) {
+  void import("./world").then(({ createLineWorld }) =>
+    createLineWorld(canvas).then((instance) => {
+      world = instance;
+      world?.setPosition(lastProgress);
+    }),
+  );
+}
 
 document.addEventListener("click", (event) => {
   const target = event.target as HTMLElement | null;
@@ -173,17 +182,18 @@ document.addEventListener("click", (event) => {
   history.replaceState(null, "", href);
 });
 
+window.addEventListener("scroll", onScroll, { passive: true });
 window.addEventListener("resize", () => {
+  measureMain();
   world?.resize();
-  ScrollTrigger.refresh();
   syncScroll();
 });
 
 if (location.hash) {
   history.scrollRestoration = "manual";
   scrollToSection(location.hash, "auto");
-  ScrollTrigger.refresh();
 }
 
+measureMain();
 syncScroll();
 document.documentElement.dataset.inputMode = "scroll";
