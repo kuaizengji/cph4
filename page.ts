@@ -1,12 +1,11 @@
 import {
-  escapeHtml,
   jobs,
   mountFooter,
   mountNavToggle,
-  productHref,
-  productIntroHtml,
+  productPageInnerHtml,
   products,
   rootHref,
+  escapeHtml,
 } from "./site";
 import { createLineWorld } from "./world";
 
@@ -25,25 +24,9 @@ const renderProduct = () => {
     return;
   }
 
-  document.title = `${product.name} — CPH4.AI`;
+  document.title = product.seoTitle;
   document.querySelector(".site-nav a[data-section='products']")?.classList.add("is-active");
-
-  const siblings = products
-    .map((entry) => {
-      const current = entry.slug === product.slug;
-      return `<li>${
-        current
-          ? `<span class="page-sibling is-current">${escapeHtml(entry.name)}</span>`
-          : `<a href="${productHref(entry.slug)}">${escapeHtml(entry.name)}</a>`
-      }</li>`;
-    })
-    .join("");
-
-  pageRoot.innerHTML = `
-    <p class="eyebrow"><a href="${rootHref("index.html#products")}">Products</a> / ${escapeHtml(product.status)}</p>
-    ${productIntroHtml(product, { heading: "h1", showStatus: false })}
-    <ul class="page-siblings">${siblings}</ul>
-  `;
+  pageRoot.innerHTML = productPageInnerHtml(product);
 };
 
 const renderJob = () => {

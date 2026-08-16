@@ -3,25 +3,119 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
     <meta name="theme-color" content="#000000" />
+    <style>html,body{background:#000}</style>
     <script>
       if (window.location.protocol === "file:") {
         window.location.replace(
           new URL("./dist/index.html?motion=1", window.location.href).href,
         );
       }
+      if (window.location.hash) {
+        history.scrollRestoration = "manual";
+      }
     </script>
+    <title>CPH4.AI — Intelligence, without end.</title>
     <meta
       name="description"
-      content="CPH4.AI — Intelligence, without end. An organization that evolves itself. A self that never stops becoming."
+      content="An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity."
     />
-    <title>CPH4.AI — Augment Humanity</title>
+    <meta name="author" content="CPH4.AI" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://cph4.ai/" />
+    <link rel="alternate" hreflang="en" href="https://cph4.ai/" />
+    <link rel="alternate" hreflang="x-default" href="https://cph4.ai/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CPH4.AI" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://cph4.ai/" />
+    <meta property="og:title" content="CPH4.AI — Intelligence, without end." />
+    <meta
+      property="og:description"
+      content="An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity."
+    />
+    <meta property="og:image" content="https://cph4.ai/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="CPH4.AI — Intelligence, without end." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="CPH4.AI — Intelligence, without end." />
+    <meta
+      name="twitter:description"
+      content="An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity."
+    />
+    <meta name="twitter:image" content="https://cph4.ai/og.png" />
+    <meta name="twitter:image:alt" content="CPH4.AI — Intelligence, without end." />
     <link rel="icon" type="image/svg+xml" href="./assets/favicon-DIULuZT3.svg" />
     <link rel="preload" href="./assets/home-line-field-TPV82_oh.png" as="image" />
     <link rel="preload" href="./assets/cph4_logo-DmrPhhkF.svg" as="image" />
-    <script type="module" crossorigin src="./assets/main-kyTd6MrA.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/world-8EV5EYE9.js">
-    <link rel="stylesheet" crossorigin href="./assets/world-WHBPokGr.css">
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://cph4.ai/#organization",
+            "name": "CPH4.AI",
+            "alternateName": "CPH4",
+            "url": "https://cph4.ai/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cph4.ai/og.png",
+              "caption": "CPH4.AI"
+            },
+            "image": "https://cph4.ai/og.png",
+            "email": "nemoarce2007@gmail.com",
+            "description": "An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity.",
+            "slogan": "Intelligence, without end.",
+            "founder": [
+              {
+                "@type": "Person",
+                "name": "Jimmy Xu",
+                "jobTitle": "Co-Founder & Chairman of the Board"
+              },
+              {
+                "@type": "Person",
+                "name": "Jason Guo",
+                "jobTitle": "Co-Founder & CEO"
+              }
+            ],
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "email": "nemoarce2007@gmail.com",
+              "contactType": "customer support"
+            }
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://cph4.ai/#website",
+            "url": "https://cph4.ai/",
+            "name": "CPH4.AI",
+            "description": "An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity.",
+            "inLanguage": "en",
+            "publisher": { "@id": "https://cph4.ai/#organization" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://cph4.ai/#webpage",
+            "url": "https://cph4.ai/",
+            "name": "CPH4.AI — Intelligence, without end.",
+            "description": "An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity.",
+            "isPartOf": { "@id": "https://cph4.ai/#website" },
+            "about": { "@id": "https://cph4.ai/#organization" },
+            "primaryImageOfPage": {
+              "@type": "ImageObject",
+              "url": "https://cph4.ai/og.png"
+            }
+          }
+        ]
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/main-Dg3Im50o.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/world-CRO3kM1h.js">
+    <link rel="stylesheet" crossorigin href="./assets/world-tus336g-.css">
   </head>
   <body>
     <a class="skip-link" href="#home">Skip to content</a>
@@ -41,7 +135,7 @@
         <a href="#products" data-section="products">Products</a>
         <a href="#capabilities" data-section="capabilities">Capabilities</a>
         <a href="#company" data-section="company">Company</a>
-        <a href="./blog/index.html" data-section="blogs">Blogs</a>
+        <a href="#blogs" data-section="blogs">Blogs</a>
         <a href="#careers" data-section="careers">Careers</a>
       </nav>
 
@@ -108,12 +202,15 @@
               <ul class="capability-list">
                 <li data-slug="rpa" tabindex="0">
                   <span class="capability-name">RPA</span>
+                  <span class="visually-hidden">Automated ops across Xiaohongshu, WeChat, Reddit, YouTube.</span>
                 </li>
                 <li data-slug="aeo" tabindex="0">
                   <span class="capability-name">AEO</span>
+                  <span class="visually-hidden">Public acquisition — so models recommend the brand.</span>
                 </li>
                 <li data-slug="digital-humans" tabindex="0">
                   <span class="capability-name">Digital humans</span>
+                  <span class="visually-hidden">Generated presenters from video, speech, and voice clone.</span>
                 </li>
               </ul>
             </div>
@@ -122,15 +219,19 @@
               <ul class="capability-list">
                 <li data-slug="video-gen" tabindex="0">
                   <span class="capability-name">Video Gen</span>
+                  <span class="visually-hidden">Image and video synthesis.</span>
                 </li>
                 <li data-slug="asr" tabindex="0">
                   <span class="capability-name">ASR</span>
+                  <span class="visually-hidden">Speech to text.</span>
                 </li>
                 <li data-slug="tts" tabindex="0">
                   <span class="capability-name">TTS</span>
+                  <span class="visually-hidden">Text to speech.</span>
                 </li>
                 <li data-slug="voice-clone" tabindex="0">
                   <span class="capability-name">Voice Clone</span>
+                  <span class="visually-hidden">A voice that can be reused.</span>
                 </li>
               </ul>
             </div>
@@ -139,6 +240,7 @@
               <ul class="capability-list">
                 <li data-slug="ontology" tabindex="0">
                   <span class="capability-name">Ontology</span>
+                  <span class="visually-hidden">The model underneath.</span>
                 </li>
               </ul>
             </div>
@@ -175,9 +277,19 @@
         </div>
       </section>
 
-      <section class="section section-careers" id="careers" data-panel="4" aria-labelledby="careers-title">
+      <section class="section section-blogs" id="blogs" data-panel="4" aria-labelledby="blogs-title">
+        <div class="section-copy blogs-copy">
+          <p class="eyebrow">04 / Blogs</p>
+          <h2 id="blogs-title">Blogs</h2>
+          <div data-notes>
+            <p class="page-empty">Nothing filed yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="section section-careers" id="careers" data-panel="5" aria-labelledby="careers-title">
         <div class="section-copy careers-copy">
-          <p class="eyebrow">04 / Careers</p>
+          <p class="eyebrow">05 / Careers</p>
           <h2 id="careers-title">Small teams.<br />You ship.</h2>
           <p>High agency. Leverage, not headcount.</p>
           <ul class="job-list" data-jobs></ul>

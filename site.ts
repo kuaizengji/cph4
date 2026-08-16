@@ -1,10 +1,19 @@
 export type ProductStatus = "Live" | "Coming" | "Demo" | "Building";
 
+export const SITE_URL = "https://cph4.ai";
+
+export const siteSeo = {
+  title: "CPH4.AI — Intelligence, without end.",
+  description:
+    "An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity.",
+} as const;
+
 export type Product = {
   slug: string;
   name: string;
   status: ProductStatus;
   line: string;
+  seoTitle: string;
   paragraphs: string[];
   external?: { label: string; href: string };
 };
@@ -41,6 +50,7 @@ export const products: Product[] = [
     name: "Kuaizengji",
     status: "Live",
     line: "Coursework-native AI for students in English-medium and overseas programs.",
+    seoTitle: "Kuaizengji — Coursework-native AI | CPH4.AI",
     paragraphs: [
       "Kuaizengji sits inside the work students already have: readings, problem sets, exams in English-medium and overseas programs. Not a generic chat window.",
       "It is live. The product site is separate from this company site.",
@@ -52,6 +62,7 @@ export const products: Product[] = [
     name: "Kuaizengji 3.0",
     status: "Coming",
     line: "A general learning agent: any source in, structured knowledge out. September 2026.",
+    seoTitle: "Kuaizengji 3.0 — General learning agent | CPH4.AI",
     paragraphs: [
       "3.0 generalizes the work. Lecture, paper, recording — in. Structured knowledge — out.",
       "Dated September 2026. Not live.",
@@ -62,6 +73,7 @@ export const products: Product[] = [
     name: "Taoran Agent",
     status: "Demo",
     line: "Exam-prep that follows a named teacher’s method, not a generic tutor.",
+    seoTitle: "Taoran Agent — Teacher-method exam prep | CPH4.AI",
     paragraphs: [
       "Most tutors average a subject. Taoran Agent follows one teacher’s method through exam prep.",
       "In demo. Not a public product yet.",
@@ -72,6 +84,7 @@ export const products: Product[] = [
     name: "Verdict",
     status: "Building",
     line: "Financial opinions, settled against real prices.",
+    seoTitle: "Verdict — Financial opinions | CPH4.AI",
     paragraphs: [
       "Verdict is being built to produce financial opinions that can be checked against prices that actually traded.",
       "In progress. Nothing to open yet.",
@@ -205,7 +218,7 @@ export const productIntroHtml = (
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
     .join("");
   const cta = product.external
-    ? `<a class="outline-cta" href="${escapeHtml(product.external.href)}" target="_blank" rel="noreferrer">${escapeHtml(product.external.label)}</a>`
+    ? `<a class="outline-cta" href="${escapeHtml(product.external.href)}" target="_blank" rel="noopener noreferrer">${escapeHtml(product.external.label)}</a>`
     : "";
   const status = showStatus
     ? `<p class="product-detail-status">${escapeHtml(product.status)}</p>`
@@ -220,6 +233,35 @@ export const productIntroHtml = (
     <p class="page-lede">${escapeHtml(product.line)}</p>
     <div class="page-body">${paragraphs}</div>
     ${cta}
+  `;
+};
+
+/** Full product intro page body (eyebrow + intro + siblings). Used by page.ts and mirrored in static HTML. */
+export const productPageInnerHtml = (
+  product: Product,
+  options: { nested?: boolean } = {},
+) => {
+  const nested =
+    options.nested ??
+    (typeof document !== "undefined" && document.body?.dataset.root === "nested");
+  const toRoot = (path: string) => (nested ? `../${path}` : `./${path}`);
+  const toProduct = (slug: string) => toRoot(`products/${slug}.html`);
+
+  const siblings = products
+    .map((entry) => {
+      const current = entry.slug === product.slug;
+      return `<li>${
+        current
+          ? `<span class="page-sibling is-current">${escapeHtml(entry.name)}</span>`
+          : `<a href="${toProduct(entry.slug)}">${escapeHtml(entry.name)}</a>`
+      }</li>`;
+    })
+    .join("");
+
+  return `
+    <p class="eyebrow"><a href="${toRoot("index.html#products")}">Products</a> / ${escapeHtml(product.status)}</p>
+    ${productIntroHtml(product, { heading: "h1", showStatus: false })}
+    <ul class="page-siblings">${siblings}</ul>
   `;
 };
 
