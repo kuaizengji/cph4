@@ -42,7 +42,7 @@ const cancelFrame =
     : (id: number) => clearTimeout(id);
 
 const loadTexture = async () => {
-  const url = new URL("./assets/home-line-field.png", import.meta.url).href;
+  const url = new URL("./assets/home-line-field.webp", import.meta.url).href;
   const response = await fetch(url);
   const bitmap = await createImageBitmap(await response.blob());
   const texture = new THREE.Texture(bitmap);
