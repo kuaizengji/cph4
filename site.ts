@@ -176,7 +176,15 @@ export const capabilities: Capability[] = [
 ];
 
 /** Add an entry here and a matching HTML file under blog/ when a post ships. */
-export const notes: Note[] = [];
+export const notes: Note[] = [
+  {
+    slug: "why-come-back-to-cursor",
+    title: "Why you should come back to Cursor",
+    date: "2026-08-23",
+    excerpt:
+      "I left Cursor for Claude Code and Codex, then came back. Here is the setup and the method I actually use.",
+  },
+];
 
 /** Real openings only. Empty until a JD ships. */
 export const jobs: Job[] = [];
