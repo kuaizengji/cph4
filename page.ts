@@ -53,7 +53,10 @@ const renderJob = () => {
 };
 
 if (isJob) renderJob();
-else renderProduct();
+else if (document.body.dataset.product) renderProduct();
+else {
+  document.querySelector(".site-nav a[data-section='blogs']")?.classList.add("is-active");
+}
 
 mountFooter();
 mountNavToggle();
