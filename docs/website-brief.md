@@ -153,13 +153,14 @@ A self that never stops becoming.
 | Name | Status | One line | 介绍页 | 产品站 |
 |---|---|---|---|---|
 | Kuaizengji | Live | Coursework-native AI for students in English-medium and overseas programs. | `products/kuaizengji.html` | https://www.kuaizengji.com/ |
-| Kuaizengji 3.0 | Coming | A general learning agent: any source in, structured knowledge out. September 2026. | `products/kuaizengji-3.html` | — |
-| Taoran Agent | Demo | Exam-prep that follows a named teacher’s method, not a generic tutor. | `products/taoran.html` | https://demotrial.vercel.app |
+| BNBU.ME | Live | A BNBU campus client, synced across macOS, Windows, Android, and iOS. | `products/bnbu-me.html` | https://bnbu.me/ |
 | Verdict | Live | Financial opinions, settled against real prices. | `products/verdict.html` | https://verdictfinance.top/ |
+| Taoran Agent | Demo | Exam-prep that follows a named teacher’s method, not a generic tutor. | `products/taoran.html` | https://demotrial.vercel.app |
+| Kuaizengji 3.0 | Coming | A general learning agent: any source in, structured knowledge out. September 2026. | `products/kuaizengji-3.html` | — |
 
 主页放目录 + 悬停左侧介绍；介绍页文案源在 `site.ts`（`productIntroHtml` 主页与子页共用）。产品站内部细节、竞品名、停运计划、获客手法，不进母站。
 
-Growth systems 已从 Products 移除；RPA / AEO / Digital humans / 媒体能力 / Ontology 见 Capabilities。
+Growth systems 已从 Products 移除；RPA / AEO / 媒体能力 / Ontology 见 Capabilities。
 
 发 Blogs：在 `site.ts` 的 `notes` 加一条，并加对应 `blog/{slug}.html`。
 
@@ -173,8 +174,6 @@ Growth systems 已从 Products 移除；RPA / AEO / Digital humans / 媒体能�
 |---|---|---|
 | Applied | RPA | Automated ops across Xiaohongshu, WeChat, Reddit, YouTube. |
 | Applied | AEO | Public acquisition — so models recommend the brand. |
-| Applied | Digital humans | Generated presenters from video, speech, and voice clone. |
-| Media | Video Gen | Image and video synthesis. |
 | Media | ASR | Speech to text. |
 | Media | TTS | Text to speech. |
 | Media | Voice Clone | A voice that can be reused. |

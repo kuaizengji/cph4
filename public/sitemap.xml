@@ -11,9 +11,14 @@
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://cph4.ai/products/kuaizengji-3.html</loc>
+    <loc>https://cph4.ai/products/bnbu-me.html</loc>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cph4.ai/products/verdict.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
   <url>
     <loc>https://cph4.ai/products/taoran.html</loc>
@@ -21,7 +26,7 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://cph4.ai/products/verdict.html</loc>
+    <loc>https://cph4.ai/products/kuaizengji-3.html</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

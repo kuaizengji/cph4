@@ -58,15 +58,28 @@ export const products: Product[] = [
     external: { label: "Open", href: "https://www.kuaizengji.com/" },
   },
   {
-    slug: "kuaizengji-3",
-    name: "Kuaizengji 3.0",
-    status: "Coming",
-    line: "A general learning agent: any source in, structured knowledge out. September 2026.",
-    seoTitle: "Kuaizengji 3.0 — General learning agent | CPH4.AI",
+    slug: "bnbu-me",
+    name: "BNBU.ME",
+    status: "Live",
+    line: "A BNBU campus client, synced across macOS, Windows, Android, and iOS.",
+    seoTitle: "BNBU.ME — BNBU campus client | CPH4.AI",
     paragraphs: [
-      "3.0 generalizes the work. Lecture, paper, recording — in. Structured knowledge — out.",
-      "Dated September 2026. Not live.",
+      "Courses, timetable, email, homework, campus info, learning materials, and AI academic collaboration — in one client. The academic layer connects to Kuaizengji.",
+      "It is live. Daily campus work that used to sit across separate systems, in one continuous, unified, and secure experience.",
     ],
+    external: { label: "Open", href: "https://bnbu.me/" },
+  },
+  {
+    slug: "verdict",
+    name: "Verdict",
+    status: "Live",
+    line: "Financial opinions, settled against real prices.",
+    seoTitle: "Verdict — Financial opinions | CPH4.AI",
+    paragraphs: [
+      "Verdict produces financial opinions that can be checked against prices that actually traded.",
+      "It is live. The product site is separate from this company site.",
+    ],
+    external: { label: "Open", href: "https://verdictfinance.top/" },
   },
   {
     slug: "taoran",
@@ -81,16 +94,15 @@ export const products: Product[] = [
     external: { label: "Open demo", href: "https://demotrial.vercel.app" },
   },
   {
-    slug: "verdict",
-    name: "Verdict",
-    status: "Live",
-    line: "Financial opinions, settled against real prices.",
-    seoTitle: "Verdict — Financial opinions | CPH4.AI",
+    slug: "kuaizengji-3",
+    name: "Kuaizengji 3.0",
+    status: "Coming",
+    line: "A general learning agent: any source in, structured knowledge out. September 2026.",
+    seoTitle: "Kuaizengji 3.0 — General learning agent | CPH4.AI",
     paragraphs: [
-      "Verdict produces financial opinions that can be checked against prices that actually traded.",
-      "It is live. The product site is separate from this company site.",
+      "3.0 generalizes the work. Lecture, paper, recording — in. Structured knowledge — out.",
+      "Dated September 2026. Not live.",
     ],
-    external: { label: "Open", href: "https://verdictfinance.top/" },
   },
 ];
 
@@ -113,26 +125,6 @@ export const capabilities: Capability[] = [
     paragraphs: [
       "Acquisition used to mean ranking in search. Now it also means being the name a model gives when someone asks.",
       "We write and place the public record so the brand is what gets recommended. Not ads. Presence.",
-    ],
-  },
-  {
-    slug: "digital-humans",
-    name: "Digital humans",
-    group: "Applied",
-    line: "Generated presenters from video, speech, and voice clone.",
-    paragraphs: [
-      "Presenters assembled from video, speech, and a cloned voice — so a face and a method can appear without a studio day for every cut.",
-      "Used where a person should show up and cannot always be in the room. Not a consumer avatar you buy.",
-    ],
-  },
-  {
-    slug: "video-gen",
-    name: "Video Gen",
-    group: "Media",
-    line: "Image and video synthesis.",
-    paragraphs: [
-      "Images and video generated to the brief, then cut into the work that needs them.",
-      "A media layer. Not a generator we sell.",
     ],
   },
   {
@@ -162,7 +154,7 @@ export const capabilities: Capability[] = [
     line: "A voice that can be reused.",
     paragraphs: [
       "A voice captured once, then reused — so the same speaker can appear in new cuts without a new session.",
-      "Used with digital humans and TTS. The voice is the asset. The clone is the reuse.",
+      "Used with TTS. The voice is the asset. The clone is the reuse.",
     ],
   },
   {
