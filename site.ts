@@ -76,19 +76,21 @@ export const products: Product[] = [
     seoTitle: "Taoran Agent — Teacher-method exam prep | CPH4.AI",
     paragraphs: [
       "Most tutors average a subject. Taoran Agent follows one teacher’s method through exam prep.",
-      "In demo. Not a public product yet.",
+      "A demo is open. Not a public product yet.",
     ],
+    external: { label: "Open demo", href: "https://demotrial.vercel.app" },
   },
   {
     slug: "verdict",
     name: "Verdict",
-    status: "Building",
+    status: "Live",
     line: "Financial opinions, settled against real prices.",
     seoTitle: "Verdict — Financial opinions | CPH4.AI",
     paragraphs: [
-      "Verdict is being built to produce financial opinions that can be checked against prices that actually traded.",
-      "In progress. Nothing to open yet.",
+      "Verdict produces financial opinions that can be checked against prices that actually traded.",
+      "It is live. The product site is separate from this company site.",
     ],
+    external: { label: "Open", href: "https://verdictfinance.top/" },
   },
 ];
 
