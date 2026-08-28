@@ -154,8 +154,8 @@ A self that never stops becoming.
 |---|---|---|---|---|
 | Kuaizengji | Live | Coursework-native AI for students in English-medium and overseas programs. | `products/kuaizengji.html` | https://www.kuaizengji.com/ |
 | Kuaizengji 3.0 | Coming | A general learning agent: any source in, structured knowledge out. September 2026. | `products/kuaizengji-3.html` | — |
-| Taoran Agent | Demo | Exam-prep that follows a named teacher’s method, not a generic tutor. | `products/taoran.html` | — |
-| Verdict | Building | Financial opinions, settled against real prices. | `products/verdict.html` | — |
+| Taoran Agent | Demo | Exam-prep that follows a named teacher’s method, not a generic tutor. | `products/taoran.html` | https://demotrial.vercel.app |
+| Verdict | Live | Financial opinions, settled against real prices. | `products/verdict.html` | https://verdictfinance.top/ |
 
 主页放目录 + 悬停左侧介绍；介绍页文案源在 `site.ts`（`productIntroHtml` 主页与子页共用）。产品站内部细节、竞品名、停运计划、获客手法，不进母站。
 
