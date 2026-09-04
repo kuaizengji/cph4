@@ -87,11 +87,11 @@ const mountProductDetail = () => {
   if (!detail || !list) return;
 
   const items = [...list.querySelectorAll<HTMLElement>("li[data-slug]")];
-  let activeSlug = products[0]?.slug ?? "";
+  let activeSlug = "";
 
   const show = (slug: string, animate = true) => {
     const product = products.find((entry) => entry.slug === slug);
-    if (!product) return;
+    if (!product || product.slug === activeSlug) return;
     activeSlug = product.slug;
     detail.classList.remove("is-fresh");
     detail.innerHTML = productIntroHtml(product, { heading: "h2" });
@@ -109,14 +109,10 @@ const mountProductDetail = () => {
     if (!slug) return;
     item.addEventListener("pointerenter", () => show(slug));
     item.addEventListener("focusin", () => show(slug));
-    item.addEventListener("click", (event) => {
-      const target = event.target as HTMLElement | null;
-      if (target?.closest("a")) return;
-      show(slug);
-    });
   });
 
-  if (activeSlug) show(activeSlug, false);
+  const initialProduct = products[0]?.slug;
+  if (initialProduct) show(initialProduct, false);
 };
 
 const mountCapabilityDetail = () => {
@@ -125,11 +121,11 @@ const mountCapabilityDetail = () => {
   if (!detail || !list) return;
 
   const items = [...list.querySelectorAll<HTMLElement>("li[data-slug]")];
-  let activeSlug = capabilities[0]?.slug ?? "";
+  let activeSlug = "";
 
   const show = (slug: string, animate = true) => {
     const capability = capabilities.find((entry) => entry.slug === slug);
-    if (!capability) return;
+    if (!capability || capability.slug === activeSlug) return;
     activeSlug = capability.slug;
     detail.classList.remove("is-fresh");
     detail.innerHTML = capabilityIntroHtml(capability, { heading: "h2" });
@@ -147,10 +143,10 @@ const mountCapabilityDetail = () => {
     if (!slug) return;
     item.addEventListener("pointerenter", () => show(slug));
     item.addEventListener("focusin", () => show(slug));
-    item.addEventListener("click", () => show(slug));
   });
 
-  if (activeSlug) show(activeSlug, false);
+  const initialCapability = capabilities[0]?.slug;
+  if (initialCapability) show(initialCapability, false);
 };
 
 mountFooter();
