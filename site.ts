@@ -172,6 +172,13 @@ export const capabilities: Capability[] = [
 /** Add an entry here and a matching HTML file under blog/ when a post ships. */
 export const notes: Note[] = [
   {
+    slug: "dont-work-where-the-model-will-catch-up",
+    title: "Don't work where the model will catch up",
+    date: "2026-09-08",
+    excerpt:
+      "Each layer we built around the model became default. Don't pay for what the next release will absorb.",
+  },
+  {
     slug: "why-come-back-to-cursor",
     title: "Why you should come back to Cursor",
     date: "2026-08-23",
@@ -268,20 +275,14 @@ export const productPageInnerHtml = (
 };
 
 /** Homepage hover pane for Capabilities (no subpages, no CTA). */
-export const capabilityIntroHtml = (
-  capability: Capability,
-  options: {
-    heading?: "h1" | "h2" | "h3";
-  } = {},
-) => {
-  const heading = options.heading ?? "h2";
+export const capabilityIntroHtml = (capability: Capability) => {
   const paragraphs = capability.paragraphs
     .map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`)
     .join("");
 
   return `
     <p class="capability-detail-group">${escapeHtml(capability.group)}</p>
-    <${heading} class="capability-detail-name">${escapeHtml(capability.name)}</${heading}>
+    <p class="capability-detail-name">${escapeHtml(capability.name)}</p>
     <p class="page-lede">${escapeHtml(capability.line)}</p>
     <div class="page-body">${paragraphs}</div>
   `;
