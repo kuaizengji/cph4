@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#000000" />
+    <style>html,body{background:#000}</style>
+    <title>Don't work where the model will catch up — CPH4.AI</title>
+    <meta
+      name="description"
+      content="Each layer we built around the model — prompts, RAG, harnesses — became default. Here is what still compounds: judgment, narrative, and how you learn."
+    />
+    <meta name="author" content="Jimmy Xu" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html" />
+    <link rel="alternate" hreflang="en" href="https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html" />
+    <link rel="alternate" hreflang="x-default" href="https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html" />
+    <meta property="og:type" content="article" />
+    <meta property="og:site_name" content="CPH4.AI" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:url" content="https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html" />
+    <meta property="og:title" content="Don't work where the model will catch up — CPH4.AI" />
+    <meta
+      property="og:description"
+      content="Each layer we built around the model — prompts, RAG, harnesses — became default. Here is what still compounds: judgment, narrative, and how you learn."
+    />
+    <meta property="og:image" content="https://cph4.ai/og.png" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Don't work where the model will catch up — CPH4.AI" />
+    <meta property="article:published_time" content="2026-09-08" />
+    <meta property="article:author" content="Jimmy Xu" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Don't work where the model will catch up — CPH4.AI" />
+    <meta
+      name="twitter:description"
+      content="Each layer we built around the model — prompts, RAG, harnesses — became default. Here is what still compounds: judgment, narrative, and how you learn."
+    />
+    <meta name="twitter:image" content="https://cph4.ai/og.png" />
+    <meta name="twitter:image:alt" content="Don't work where the model will catch up — CPH4.AI" />
+    <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+    <link rel="stylesheet" href="../styles.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://cph4.ai/#organization",
+            "name": "CPH4.AI",
+            "alternateName": "CPH4",
+            "url": "https://cph4.ai/",
+            "logo": {
+              "@type": "ImageObject",
+              "url": "https://cph4.ai/og.png",
+              "caption": "CPH4.AI"
+            },
+            "image": "https://cph4.ai/og.png",
+            "email": "nemoarce2007@gmail.com",
+            "description": "An organization that evolves itself. A self that never stops becoming. CPH4.AI builds AI that unlocks unused capacity.",
+            "slogan": "Intelligence, without end.",
+            "founder": [
+              {
+                "@type": "Person",
+                "name": "Jimmy Xu",
+                "jobTitle": "Co-Founder & Chairman of the Board"
+              },
+              {
+                "@type": "Person",
+                "name": "Jason Guo",
+                "jobTitle": "Co-Founder & CEO"
+              }
+            ]
+          },
+          {
+            "@type": "Article",
+            "@id": "https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html#article",
+            "headline": "Don't work where the model will catch up",
+            "description": "Each layer we built around the model — prompts, RAG, harnesses — became default. Here is what still compounds: judgment, narrative, and how you learn.",
+            "datePublished": "2026-09-08",
+            "dateModified": "2026-09-08",
+            "inLanguage": "en",
+            "author": {
+              "@type": "Person",
+              "name": "Jimmy Xu",
+              "jobTitle": "Co-Founder & Chairman of the Board"
+            },
+            "publisher": { "@id": "https://cph4.ai/#organization" },
+            "image": "https://cph4.ai/og.png",
+            "mainEntityOfPage": { "@id": "https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html#webpage" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html#webpage",
+            "url": "https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html",
+            "name": "Don't work where the model will catch up — CPH4.AI",
+            "description": "Each layer we built around the model — prompts, RAG, harnesses — became default. Here is what still compounds: judgment, narrative, and how you learn.",
+            "isPartOf": { "@id": "https://cph4.ai/#website" },
+            "about": { "@id": "https://cph4.ai/blog/dont-work-where-the-model-will-catch-up.html#article" },
+            "publisher": { "@id": "https://cph4.ai/#organization" }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body data-root="nested" data-page="blog">
+    <a class="skip-link" href="#page">Skip to content</a>
+    <div class="backdrop" data-experience aria-hidden="true">
+      <canvas class="line-world" data-line-world></canvas>
+      <div class="grain"></div>
+      <p class="fallback-message">This desktop experience requires WebGL.</p>
+    </div>
+    <header class="site-header" data-header>
+      <a class="brand" href="../index.html" aria-label="CPH4.AI home">
+        <img src="../assets/cph4_logo.svg" width="294" height="90" alt="CPH4.AI — Augment Humanity" />
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+        <a href="../index.html#products" data-section="products">Products</a>
+        <a href="../index.html#capabilities" data-section="capabilities">Capabilities</a>
+        <a href="../index.html#company" data-section="company">Company</a>
+        <a href="../index.html#blogs" data-section="blogs">Blogs</a>
+        <a href="../index.html#careers" data-section="careers">Careers</a>
+      </nav>
+      <a class="contact-link" href="mailto:nemoarce2007@gmail.com"><span aria-hidden="true"></span>Contact</a>
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        data-nav-toggle
+      >
+        <span class="nav-toggle-bars" aria-hidden="true"></span>
+      </button>
+    </header>
+    <main class="page-main" id="page">
+      <article class="page-copy post-copy" data-page-root>
+        <p class="eyebrow"><a href="../index.html#blogs">Blogs</a> / 2026-09-08</p>
+        <h1 class="post-title">Don't work where the model will catch up</h1>
+        <p class="post-byline">Jimmy Xu</p>
+        <p class="page-lede">Each layer we built around the model became default. Don't pay for what the next release will absorb.</p>
+        <div class="page-body post-body">
+          <p>I'm Jimmy Xu. This is a piece on judgment: where effort still compounds now that the model keeps eating the layer we just built.</p>
+          <p>The prose was written by hand, not generated. Some of the material comes from conversations with operators, founders, and investors in AI. Most of the judgments are mine — from shipping, and from watching the industry.</p>
+          <p>After this, you should have a clearer view of:</p>
+          <ul>
+            <li>What a moat looks like in the large-model era</li>
+            <li>Why AI anxiety is a waste</li>
+            <li>Where veterans get stuck</li>
+            <li>Whether learning slowly enough means you never have to learn</li>
+          </ul>
+
+          <h2>In six months we may not need a harness</h2>
+          <p>In short: every extra layer we wrapped around the model either got absorbed by a stronger model, or got copied until it was default. Scarcity died. So did the reason to pay.</p>
+          <div class="post-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Layer</th>
+                  <th>What happened to the scarcity</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Prompt engineering</td>
+                  <td>Default. Wrappers faded.</td>
+                </tr>
+                <tr>
+                  <td>RAG</td>
+                  <td>Still the most common way AI actually ships. Less need to build it yourself.</td>
+                </tr>
+                <tr>
+                  <td>Workflow</td>
+                  <td>Cooled after general agents. Now a default capability.</td>
+                </tr>
+                <tr>
+                  <td>Chain-of-thought</td>
+                  <td>Native in the model.</td>
+                </tr>
+                <tr>
+                  <td>Memory infrastructure</td>
+                  <td>No breakout I have seen.</td>
+                </tr>
+                <tr>
+                  <td>Skills and MCPs</td>
+                  <td>Flooded with slop. The next native model often wins.</td>
+                </tr>
+                <tr>
+                  <td>Harness</td>
+                  <td>Open-sourced. About to be default.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p>The path looks like this.</p>
+
+          <h3>Prompt engineering</h3>
+          <p>When ChatGPT first shipped, we needed prompt engineering because the model would not follow. We assumed the problem was how we asked — that we did not know how to ask it “correctly.” GPT wrappers appeared: canned prompts, better outputs.</p>
+
+          <h3>RAG and knowledge bases</h3>
+          <p>We also found that the model needed private knowledge. So we built RAG. We solved retrieval so it could use our knowledge bases. Later it became less necessary to implement that yourself. Credit where it is due: RAG is still the most general, and the most successful, way AI has actually shipped.</p>
+
+          <h3>Workflow</h3>
+          <p>Early large models had another unsolved problem: following a process we had already decided, and using tools outside the chat. Early products here included n8n, Dify, Coze, and FastGPT. From 2023 through the first half of 2025, this was one of the more successful directions. Then Manus showed that a general agent could ship, and appetite for workflow builders cooled.</p>
+          <p>Enterprises still use workflow where cost and accuracy demand it. Combined with later agent capability, that became agentic workflow. Some of those teams are pivoting fast. A company that only sells a workflow canvas is already treating that canvas as a default feature. Building only that no longer works.</p>
+
+          <h3>Orchestrating chain-of-thought</h3>
+          <p>The model got stronger. Ordinary prompt templates mattered less. A user who could describe the job in natural language could get a decent answer. We went and built chain-of-thought by hand — the model had none — and made it print the thinking in Markdown. Then GPT-4o and DeepSeek-R1 shipped. We mostly stopped implementing it ourselves.</p>
+
+          <h3>Context and memory</h3>
+          <p>We noticed the model lacked context about us. We tried every way to manage that context. Some companies said they would build memory. I have not seen a memory-infrastructure company break out. Some that claim to do memory would be better off not shipping it. A general agent's memory already beats them. The product does nothing.</p>
+
+          <h3>Skills and MCPs</h3>
+          <p>Others said we had to build tools. If nobody defined the tools, the model could not use them, so it would only say it could not. People built piles of Skills and MCPs. Then both flooded. Skills everywhere, of every kind. A lot of it is garbage. Slop. Useless. And a lot of Skills get internalized by the next native model, which then beats the Skill that wrapped them.</p>
+
+          <h3>Harness</h3>
+          <p>Others said the shell has value: build a harness, a full system of constraints, to drive the model. Then OpenCode was open-sourced. Claude Code's harness leaked. DeepSeek's harness and Codex's harness were open-sourced. Models kept getting better. I do not think anyone will pay for a harness as a product six months from now, any more than they still buy prompt templates. It will be treated as default.</p>
+
+          <h3>What this round leaves behind</h3>
+          <p>Prompt engineering, workflow, context engineering, memory, RAG, harness — they did not vanish. Some stopped being needed because the model moved. Some stopped being scarce because open source and copycats made them default. They stopped being a reason to pay.</p>
+          <p>Each round, companies tried to outrun the foundation model with engineering around it. Those attempts failed. They might last three months. They will not last six. If they last six, they will not last a year.</p>
+
+          <h2>AI startups now, and next</h2>
+          <p>In short: private data and forward-deployed work are real, and hard to scale. Post-training only matters if a general model cannot reach the job. Licenses are a weak door. Traffic still matters this year. The larger return is becoming what models retrieve for your customers. When a wish-machine is close, ambition is the scarce input.</p>
+          <div class="post-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Bet</th>
+                  <th>How long it holds</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Private data and FDE</td>
+                  <td>Real. Hard to scale. In China, FDE is still outsourcing.</td>
+                </tr>
+                <tr>
+                  <td>Post-training</td>
+                  <td>Only if the general model cannot reach the job. Cost advantage is temporary.</td>
+                </tr>
+                <tr>
+                  <td>Licenses and compliance</td>
+                  <td>Model labs can buy the same door.</td>
+                </tr>
+                <tr>
+                  <td>Traffic and distribution</td>
+                  <td>Necessary this year. Not a moat. Intent replaces attention.</td>
+                </tr>
+                <tr>
+                  <td>Narrative and ambition</td>
+                  <td>The scarce input when the model can grant wishes.</td>
+                </tr>
+                <tr>
+                  <td>Be raw</td>
+                  <td>Useful for independent thought. Incomplete as a founding method.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <h3>Private data, post-training, and FDE</h3>
+          <p>Many companies are still building vertical agents. They believe they know the data, the process, and the industry know-how better than a foundation-model lab. So they chase private data across firms and domains, do data work, run post-training, and optimize for a narrow job. The advantages you can actually see: some large companies will not put their data on a public cloud, and a domain model can be cheaper on a narrow task. How long does that story hold?</p>
+
+          <h3>Forward deployed engineers</h3>
+          <p>The first half is a real opening for a startup. I do not think it gets large. There are only so many Fortune 500s, everyone is staring at them, and large accounts are hard. It is easy to become a staffing shop with better slides.</p>
+          <p>A hot label lately is FDE — forward deployed engineer — which Palantir made famous. Silicon Valley and China are now full of FDE companies. Model labs have joined: OpenAI, Anthropic, and Z.ai (Zhipu). From what I have seen, in China it pays better to train people to become FDEs than to do FDE. What gets sold as FDE there is still large-scale outsourcing, or, more politely, bespoke project work. That includes some of the so-called leading FDE vendors in China that I have spent time with.</p>
+          <p>There are reasons, and they stack.</p>
+          <ul>
+            <li><strong>The data is not there.</strong> Most companies in China — including large ones — do not have the digital infrastructure, let alone anything you could call intelligent. Data sits in pieces. The “knowledge base” is a pile of chat logs, unusable. The customer still treats it as gold. An FDE who walks in inherits data cleanup and knowledge engineering on top of the actual job.</li>
+            <li><strong>The decisions were never turned into process.</strong> Domain experts still call them by gut. Pulling the rules out of a business is much harder than in North America.</li>
+            <li><strong>The buyer squeezes the price.</strong> This is an old problem in China's B2B market. The market is brutally competitive. Price pressure is severe. A project billed at five million RMB can cost ten million to deliver. The more the buyer squeezes, the less the vendor can hire people who can actually do FDE. Sometimes they send a new graduate. The graduate has no experience, the work is bad, the buyer is unhappy, the next round squeezes harder. A loop.</li>
+          </ul>
+          <p>My judgment: there is no FDE ecosystem in China yet. That is not something one or two vendors can slogan into existence, or fix by asking partners to try harder. FDE there is still on a gravel road. I have not even seen a groundbreaking for the highway.</p>
+
+          <h3>Post-training</h3>
+          <p>On this optimization, a product company has to be honest about whether a general model can reach the job. If it can, what is the point of yours? The cost advantage is temporary. I believe inference cost will fall hard before long — maybe 2028. That judgment may be wrong. Plenty of people hold a two-tier token thesis: mediocre models approach free, and the models that are actually good get more expensive. We will see.</p>
+          <p>We keep trying to patch what the large model does badly. It keeps replacing last year's imperfect with a more advanced imperfect — and replacing our patch.</p>
+
+          <h3>Licenses and compliance</h3>
+          <p>Some startups say they can get a license in a regulated industry, and that this raises the door for everyone else. Is that actually stable? Incumbents on that track can co-build with a model lab. And given the size of the model companies, is your industry's door really that hard for them to buy? It doesn't make sense.</p>
+
+          <h3>Going viral, and distribution</h3>
+          <p>Plenty of people have already noticed that software itself is no longer a technical moat. Then they shout for traffic, and some go further: the only remaining barrier is distribution. Their evidence is that many of the AI product companies that actually got large results are good at traffic. In the short run, an AI company still has to get distribution working, the same way a normal startup has to grow — growth aimed at humans. The larger return, over a longer horizon, may be becoming the product that models retrieve and recommend for the customers you actually want. That takes a chain of evidence: the product site, the public writing, all of it. Some of that content is not only for people. It is also for models. And if you can, you still want a plugin or some other way into the agents people already use.</p>
+          <p>I believe people will get tired of opening that many apps. Not one portal for everyone — but almost everyone will have a portal of their own. To the people whose whole theory is traffic, I would only say this: the attention economy you are proud of will be replaced, before long, by intent, through a general entry point. As someone senior put it: traffic is not a barrier. It washes away.</p>
+
+          <h3>Narrative, storytelling, and ambition</h3>
+          <p>I have a strong feeling that we are living inside the science fiction a few people in Silicon Valley read as children. I want the next cohort like us to live inside the novels we read at thirteen. When someone says they want to emigrate to Mars, it sounds like a crank, or a fantasy. Change the sentence — Earth is only the cradle of humanity, we cannot live in the cradle forever; or: humans should become a multi-planetary species — and the same wish is suddenly legitimate, even necessary. A lot of demand we “did not need” is created this way.</p>
+          <p>I have some AGI faith. Fable 5 and GPT-6 Astra felt like the wish-machine is close. Then ambition is what matters. You get what you want. A lot of people have no imagination. They only dare ask the model for small work. That has to change. Building a narrative that a group of people will believe matters too. This is anti-Lean-Startup. More Peter Thiel.</p>
+
+          <h3>Be raw</h3>
+          <p>Another view I take seriously: strip us back to the original form, and look at what a person actually needs. If nobody had read the novels, would we want to fly a ship through space? If you only live inside a world someone constructed, you get walked down their plot — living in someone else's science fiction. That is the other founding path: solve a need that was already there. It ignores demand that narrative planted in people's heads. It is still useful for thinking for yourself.</p>
+
+          <h2>Learning and judgment in the model era</h2>
+          <p>In short: anxiety does nothing. New people are less boxed in by last year's ceiling. The edge is not permanent. You still have to learn. The test is whether your frontier moved — whether you can now solve a problem the model did not get better at.</p>
+
+          <h3>Anxiety is useless. New people have an edge.</h3>
+          <p>I keep noticing the students now. They have agents that actually work. That is not the world I started in. I entered AI in 2022, still doing NLP. The chatbots then were worse than ChatGPT. The model did not answer the question you asked. You might be talking about studying abroad; the next reply would be about emigration. The largest difference I see with people who just arrived is guts. They use AI more boldly than I do.</p>
+          <p>Veterans still have leftover habits from the old method. It is a bit like what Sam Altman has said: even when Codex can already do the job, and can operate the computer better, he still clicks into email with a mouse and replies by hand. I have watched people with no technical background brute-force code problems with AI. It still surprises me. My own way of writing code only switched in January 2026 — vibe coding first. Before that it was still Cursor-style copilot coding, most of the time.</p>
+          <p>Multi-agent work is another example. I only started using it for real when Grok Bot made it work. I had not dared to. I had tried during the OpenClaw wave and it was a mess, so when it actually worked I still did not quite believe it.</p>
+          <p>On adopting a new paradigm, people who just entered have a real edge. They should also remember there is always someone newer. The edge is not permanent.</p>
+          <p>In one line: we are limited by a box we drew. The ceiling on how we use AI is the ceiling we remember from the last generation of models. That may be the tightest bottleneck for people who entered this industry early.</p>
+          <p>The fix I use is simple. When a new model ships, go probe the boundary. Fill in only what it cannot do. Otherwise leave it alone and let it work. A useful way to put it, from <em>We Are as Gods</em> (吾辈如神): the way a human brain worked in deep history is a poor fit for collaborating with a large model.</p>
+
+          <h3>If you learn slowly enough, do you never have to learn?</h3>
+          <p>I keep being surprised by how fast Stanford puts a course on the calendar. CS329Z — Engineering AI Agents, Fall 2026 — is the kind of thing a CS student should actually study. Not the leftover web stack: dated page layout, PHP, MySQL, jQuery. That material is neither how products ship nor how the stack actually works.</p>
+          <p>For people without a technical background, there is a bottleneck that does not go away: some problems sit in the bucket of <em>you don't know you don't know</em>.</p>
+          <p>This is easier if you already have some technical base. You may not know the details, but you know the nouns. You have a rough shape for the thing. Sometimes a sliver of a concept is enough, because you know <em>what</em> you don't know, and AI can close the rest. That is the same motion as looking up docs to learn a new language in the old world.</p>
+          <p>The advice I would give someone without that base: every time you ship a new feature or a new module, ask the model to explain it, and keep asking until the logic is actually clear — at least the logic. It is painful. It is hard. You are working against instinct. The return is large. Technical people have a cousin problem: they will not raise their own technical agency. That is not laziness. It is missing initiative.</p>
+          <p>Which raises the other question. How do you know this knowledge is actually useful? If you learn slowly enough, can you skip learning? The test I use is simple: did your frontier move? A problem you could not solve before, now solvable, without the model getting stronger — that is useful. We still have to learn.</p>
+          <p>Take a code bug. A classmate with no technical background and I hit the same problem, both on Fable 5.1. They spend fifteen minutes asking the model, patch it several times, and eventually get there. That works. I already have a guess — say, greedy matching — so I point the model at that direction. It checks, confirms, and fixes it. The time is different. The thing behind the time is different. Stack those episodes and you get a gap in efficiency that does not close by waiting.</p>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer" data-footer></footer>
+    <script type="module" src="../page.ts"></script>
+  </body>
+</html>

@@ -102,7 +102,7 @@ flowchart LR
 | 首页 TDK / OG / Twitter / JSON-LD Organization + WebSite + WebPage | [`index.html`](../index.html) 已齐 | **保持** |
 | 产品页独立 TDK + Product / SoftwareApplication schema | [`products/*.html`](../products/kuaizengji.html) 已齐 | **保持** |
 | 产品页 H1 / 正文 | 四页静态 HTML 已含 H1 + lede + 两段（+ Live CTA）；[`page.ts`](../page.ts) 用 `productPageInnerHtml` 增强 | **已做** |
-| Capabilities | 仅 `#capabilities`；长介绍 JS 悬停注入；静态里有能力名 + one-liner（`.visually-hidden`） | **有意**（brief：无子页）。长介绍可继续悬停 |
+| Capabilities | 仅 `#capabilities`；无子页。静态 HTML：名称 + one-liner + 两段说明（`.visually-hidden`）；左侧默认预渲染第一条；悬停仍走 JS | **已补**（brief：无子页）。不为 SEO 拆薄页 |
 | Company / Careers 段 | 仅 `#company` / `#careers` | **有意**；品牌检索落首页即可 |
 | 空博客入口 | [`blog/index.html`](../blog/index.html)：`noindex, follow`，跳回 `#blogs`，canonical 指首页 | **有意**：无文不索引。有文后：独立 canonical、可索引、进 sitemap，去掉跳转 |
 | Sitemap | [`public/sitemap.xml`](../public/sitemap.xml)：首页 + 4 产品，不含 blog | **正确** |
@@ -208,7 +208,7 @@ twitter:card / twitter:title / twitter:description / twitter:image
 
 ### 7.5 Capabilities 特殊说明
 
-Brief：Capabilities 无独立介绍页。SEO 底线：首页静态 HTML 中可见能力 **名称**（及 brief 中的 one-liner，若写进静态更好）。悬停长文可继续 JS。不要为了 SEO 拆出八个薄页，除非 brief 改 IA。
+Brief：Capabilities 无独立介绍页。SEO 底线：首页静态 HTML 中可见能力 **名称 + one-liner + 两段说明**（列表项内 `.visually-hidden`；左侧 aside 预渲染第一条）。悬停长文可继续 JS。不要为了 SEO 拆出八个薄页，除非 brief 改 IA。
 
 ---
 

@@ -128,7 +128,7 @@ const mountCapabilityDetail = () => {
     if (!capability || capability.slug === activeSlug) return;
     activeSlug = capability.slug;
     detail.classList.remove("is-fresh");
-    detail.innerHTML = capabilityIntroHtml(capability, { heading: "h2" });
+    detail.innerHTML = capabilityIntroHtml(capability);
     detail.dataset.slug = capability.slug;
     if (animate) {
       requestAnimationFrame(() => detail.classList.add("is-fresh"));
