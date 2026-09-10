@@ -87,7 +87,7 @@ Hero 语感以现站为质量下限。咨询腔（second brain、compounding lay
 | 快增绩截图 | 本版不上 |
 | 创始人 | Company 页；文字列表；不上照片；不上年龄 |
 | 排序 | Chairman 是一把手，**Jimmy Xu 在前** |
-| 头衔英文 | `Chairman of the Board`，不写 `COB` |
+| 头衔英文 | `Executive Chairman`，不写 `COB` |
 | Ontology | Capabilities 屏末条；不当导航、不当大标题 |
 | Growth systems | 已拆出；不再作为 Products 条目 |
 | Verdict | 一条、一句话；不拆 Finance / Data / 科普；不写价格 |
@@ -186,7 +186,7 @@ Growth systems 已从 Products 移除；RPA / AEO / 媒体能力 / Ontology 见 
 无大标题宣言。Chairman 在左。无序列表，不用完整句子。Co-founded，不用 Founded。
 
 **Jimmy Xu**  
-Co-Founder & Chairman of the Board
+Co-Founder & Executive Chairman
 
 - Hong Kong Baptist University (Zhuhai Campus), Computer Science
 - Co-founded CPH4 and Kuaizengji
